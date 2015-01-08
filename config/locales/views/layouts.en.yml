@@ -1,0 +1,9 @@
+en:
+  layouts:
+    flashes:
+      flash_close_label: "Close alert"
+    navbar:
+      links:
+        home: "Home"
+        about: "About"
+        contact: "Contact"

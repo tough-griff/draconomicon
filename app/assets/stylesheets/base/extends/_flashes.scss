@@ -3,6 +3,7 @@
   color: darken($color, 60);
 
   a {
+    border-bottom: 1px solid transparentize(darken($color, 70), .7);
     color: darken($color, 70);
 
     &:hover {

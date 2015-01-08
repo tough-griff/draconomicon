@@ -27,6 +27,7 @@
       @include position(relative, -8px -8px null null);
       float: right;
       font-size: $base-line-height * 1em;
+      font-weight: bold;
       opacity: 0.2;
 
       &:after {

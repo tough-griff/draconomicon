@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
     <%= render "layouts/head" %>
   </head>
   <body>
+    <%= render "layouts/navbar" %>
     <%= render "layouts/flashes" %>
     <div class="container">
       <%= yield %>
