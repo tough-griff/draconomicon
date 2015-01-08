@@ -1,0 +1,46 @@
+.flashes {
+  @include position(fixed, null 25px 25px null);
+
+  .flash {
+    @extend %flash-base;
+    @include animation(fade-in 500ms);
+    padding-right: 20px;
+    font-weight: normal;
+
+    &.alert {
+      @include flash($alert-color);
+    }
+
+    &.error {
+      @include flash($error-color);
+    }
+
+    &.notice {
+      @include flash($notice-color);
+    }
+
+    &.success {
+      @include flash($success-color);
+    }
+
+    .flash-close {
+      @include position(relative, -8px -8px null null);
+      float: right;
+      font-size: $base-line-height * 1em;
+      opacity: 0.2;
+
+      &:after {
+        content: "\00d7";
+        cursor: pointer;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

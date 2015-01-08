@@ -3,9 +3,12 @@ ruby "2.2.0"
 
 gem "rails", "4.2.0"
 
+gem "bourbon"
 gem "devise"
 gem "jbuilder"
 gem "jquery-rails"
+gem "neat"
+gem "normalize-rails"
 gem "pg"
 gem "sass-rails"
 gem "turbolinks"

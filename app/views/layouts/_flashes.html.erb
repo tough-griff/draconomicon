@@ -1,0 +1,9 @@
+<div id="notifications" class="flashes">
+  <% flash.each do |key, value| %>
+    <% next unless value.is_a?(String) %>
+    <div id="flash-<%= key %>" class="flash <%= key %>">
+      <label class="flash-close" for="flash-<%= key %>"></label>
+      <%= value %>
+    </div>
+  <% end %>
+</div>

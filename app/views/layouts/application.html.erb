@@ -4,8 +4,9 @@
     <%= render "layouts/head" %>
   </head>
   <body>
-
-    <%= yield %>
-
+    <%= render "layouts/flashes" %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
