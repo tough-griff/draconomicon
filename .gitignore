@@ -15,3 +15,4 @@
 # Misc.
 .env
 .powenv
+.powrc

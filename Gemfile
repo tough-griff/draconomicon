@@ -11,29 +11,35 @@ gem "jquery-turbolinks"
 gem "neat"
 gem "normalize-rails"
 gem "pg"
+gem "rack-timeout"
 gem "sass-rails"
 gem "simple_form"
+gem "title"
 gem "turbolinks"
 gem "uglifier"
 gem "unicorn"
 
 group :development do
   gem "annotate"
-  gem "awesome_print"
-  gem "pry-rails"
+  gem "spring-commands-rspec"
+  gem "spring"
   gem "web-console"
 end
 
 group :development, :test do
+  gem "awesome_print"
+  gem "bundler-audit", require: false
+  gem "byebug"
+  gem "pry-rails"
   gem "rspec-rails"
-  gem "spring-commands-rspec"
-  gem "spring"
 end
 
 group :test do
-  gem "capybara", require: false
+  gem "capybara"
   gem "database_cleaner", require: false
-  gem "poltergeist", require: false
+  gem "formulaic"
+  gem "poltergeist"
+  gem "shoulda-matchers", require: false
 end
 
 group :production do

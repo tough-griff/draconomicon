@@ -1,4 +1,3 @@
-<%= provide(:title, t(".page_title")) %>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <h2 class="form-heading"><%= t(".heading") %></h2>
   <%= f.input :email, required: true %>

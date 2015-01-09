@@ -2,26 +2,31 @@ en:
   devise:
     confirmations:
       new:
-        page_title: "Resend confirmation"
         heading: "Need to confirm?"
         description: "You can resend your confirmation email."
         submit: "Resend confirmation instructions"
     passwords:
-      # edit:
+      edit:
+        heading: "Change your password"
+        submit: "Change my password"
       new:
-        page_title: "Reset password"
         heading: "Forgot your password?"
         description: "Let's send some reset instructions right away."
         submit: "Send reset instructions"
     registrations:
-      # edit:
+      edit:
+        heading: "Edit user"
+        confirmation_pending: "Currently pending confirmation for: %{email}"
+        submit: "Update"
+        delete:
+          heading: "Unhappy?"
+          submit: "Cancel my account"
+          confirmation: "Are you sure?"
       new:
-        page_title: "Sign up"
         heading: "Sign up"
         submit: "Sign up"
     sessions:
       new:
-        page_title: "Sign in"
         heading: "Sign in"
         submit: "Sign in"
     shared:
@@ -34,7 +39,6 @@ en:
         omniauth_authorize: "Sign in with %{provider}"
     unlocks:
       new:
-        page_title: "Unlock account"
         heading: "Locked out?"
         description: "We'll get you situated again, don't worry."
         submit: "Resend unlock instructions"
