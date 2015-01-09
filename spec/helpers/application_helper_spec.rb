@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe ApplicationHelper, type: :helper do
-  let(:title) { full_title("foo")}
+RSpec.describe ApplicationHelper, type: :helper do
+  let(:title) { full_title("foo") }
 
   describe "#full_title" do
     it "includes the page title" do

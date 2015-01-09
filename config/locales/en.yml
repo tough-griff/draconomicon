@@ -21,3 +21,13 @@
 
 en:
   draconomicon: "The Draconomicon"
+  paths:
+    new_user_session: "Sign in"
+    new_user_password: "Forgot your password?"
+    edit_user_password: "Change your password"
+    cancel_user_registration: "Delete your account"
+    new_user_registration: "Sign up"
+    edit_user_registration: "Edit user"
+    new_user_confirmation: "Didn't receive confirmation instructions?"
+    new_user_unlock: "Didn't receive unlock instructions?"
+    root: "Home"

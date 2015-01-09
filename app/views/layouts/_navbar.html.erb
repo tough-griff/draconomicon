@@ -1,15 +1,19 @@
 <header class="navigation">
   <nav class="navigation-wrapper">
     <ul class="navigation-menu">
-      <li class="nav-link"><%= link_to t('.links.home'), root_path %></li>
-      <li class="nav-link"><%= link_to t('.links.about'), "/about" %></li>
+      <li class="nav-link"><%= link_to t("paths.root"), root_path %></li>
+      <li class="nav-link"><%= link_to t("paths.about"), "/about" %></li>
       <!-- TODO -->
       <!-- <li class="nav-link"></li> -->
-      <!-- <div class="right"> -->
+      <div class="right">
         <!-- <li class="nav-link"></li> -->
         <!-- <li class="nav-link"></li> -->
-        <!-- <li class="nav-link"></li> -->
-      <!-- </div> -->
+        <%- if user_signed_in? %>
+
+        <% else %>
+          <li class="nav-link"><%= link_to t("paths.new_user_session"), new_user_session_path %></li>
+        <% end -%>
+      </div>
     </ul>
   </nav>
 </header>
