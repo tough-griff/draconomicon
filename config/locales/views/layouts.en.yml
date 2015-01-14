@@ -1,4 +1,4 @@
 en:
   layouts:
-    flashes:
-      flash_close_label: "Close alert"
+    flash:
+      close_label: "Close alert"

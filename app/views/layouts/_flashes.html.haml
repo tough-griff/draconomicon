@@ -1,0 +1,4 @@
+#notifactions.flashes
+  - flash.each do |key, value|
+    - next unless value.is_a?(String)
+    = render "layouts/flash", key: key, value: value

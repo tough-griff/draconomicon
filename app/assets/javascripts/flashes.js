@@ -8,12 +8,4 @@ $(document).ready(function () {
       $elem.remove();
     });
   });
-
-  $close.on('click', function () {
-    var $elem = $(this);
-    var $parent = $elem.parent();
-    $parent.fadeOut(500, function () {
-      $parent.remove();
-    });
-  });
 });

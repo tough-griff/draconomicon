@@ -1,9 +1,0 @@
-<div id="notifications" class="flashes">
-  <% flash.each do |key, value| %>
-    <% next unless value.is_a?(String) %>
-    <div id="flash-<%= key %>" class="flash <%= key %>">
-      <span class="flash-close" role="button" aria-label="<%= t('.flash_close_label') %>"></span>
-      <span class="flash-text"><%= raw(value) %></span>
-    </div>
-  <% end %>
-</div>

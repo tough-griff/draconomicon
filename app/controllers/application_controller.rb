@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   # Application-wide catch-all redirect
   def catchall
-    flash[:notice] = t(".flashes.redirect.html")
+    flash[:notice] = t(".flashes.redirect")
     redirect_to :root
   end
 end

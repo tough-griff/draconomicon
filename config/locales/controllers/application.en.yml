@@ -2,5 +2,4 @@ en:
   application:
     catchall:
       flashes:
-        redirect:
-          html: "<strong>Sorry</strong>, we could not find the page you were looking for."
+        redirect: "Sorry, we could not find the page you were looking for."
