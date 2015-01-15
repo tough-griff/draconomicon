@@ -1,11 +1,12 @@
 .flashes {
   @include position(fixed, null 25px 25px null);
+  z-index: 99999;
 
   .flash {
     @extend %flash-base;
     @include animation(fade-in 500ms);
-    padding-right: 20px;
     font-weight: normal;
+    padding-right: 20px;
 
     &.alert {
       @include flash($alert-color);
@@ -28,7 +29,7 @@
       float: right;
       font-size: $base-line-height * 1em;
       font-weight: bold;
-      opacity: 0.2;
+      opacity: .2;
 
       &:after {
         content: "\00d7";
@@ -36,7 +37,7 @@
       }
 
       &:hover {
-        opacity: 0.5;
+        opacity: .5;
       }
 
       &:focus {

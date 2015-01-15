@@ -1,0 +1,9 @@
+exclude: "app/assets/stylesheets/base/**"
+
+linters:
+  NestingDepth:
+    enabled: true
+    max_depth: 4
+  StringQuotes:
+    enabled: true
+    style: double_quotes

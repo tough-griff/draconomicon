@@ -1,13 +1,13 @@
 %header.navigation
   %nav.navigation-wrapper
-    %ul.navigation-menu
-      %li.nav-link= link_to t("paths.root"), root_path
-      %li.nav-link= link_to t("paths.about"), "/about"
-      -# %li.nav-link
+    %ul.navigation-menu{role: "menu"}
+      = nav_link_to t("paths.root"), root_path
+      = nav_link_to t("paths.about"), "/about"
+      %li.nav-link
       .right
-        -# %li.nav-link
-        -# %li.nav-link
+        %li.nav-link
+        %li.nav-link
         - if user_signed_in?
           -# TODO
         - else
-          %li.nav-link= link_to t("paths.new_user_session"), new_user_session_path
+          = nav_link_to t("paths.new_user_session"), new_user_session_path
