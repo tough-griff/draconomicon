@@ -5,7 +5,9 @@ en:
       default: "%m/%d/%Y"
       with_weekday: "%a %m/%d/%y"
   paths:
+    current_user: "Profile"
     new_user_session: "Sign in"
+    destroy_user_session: "Sign out"
     new_user_password: "Forgot your password?"
     edit_user_password: "Change your password"
     cancel_user_registration: "Delete your account"

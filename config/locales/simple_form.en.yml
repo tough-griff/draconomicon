@@ -13,14 +13,17 @@ en:
         email: "Email Address"
         password: "Password"
         password_confirmation: "Confirm Password"
+        current_password: "Current Password"
     hints:
       user:
         name: "This is your display name"
         email: "Used to log in and manage your account"
         password: "Must be at least 8 characters"
+        current_password: "We need your current password to confirm your changes"
     placeholders:
       user:
         name: "Username"
         email: "Email Address"
         password: "Password"
         password_confirmation: "Confirm Password"
+        current_password: "Current Password"

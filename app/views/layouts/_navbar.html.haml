@@ -12,6 +12,7 @@
           %li.nav-link.more
             = link_to current_user.name, "javascript:void(0)"
             %ul.submenu
-              %li= link_to "Sign out", destroy_user_session_path, method: :delete
+              %li= link_to t("paths.edit_user_registration"), edit_user_registration_path
+              %li= link_to t("paths.destroy_user_session"), destroy_user_session_path, method: :delete
         - else
           = nav_link_to t("paths.new_user_session"), new_user_session_path

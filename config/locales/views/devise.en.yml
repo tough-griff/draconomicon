@@ -19,7 +19,7 @@ en:
         confirmation_pending: "Currently pending confirmation for: %{email}"
         delete:
           heading: "Unhappy?"
-          submit: "Cancel my account"
+          submit: "Cancel your account"
           confirmation: "Are you sure?"
       new:
         heading: "Sign up"

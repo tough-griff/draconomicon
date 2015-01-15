@@ -1,6 +1,6 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <h2 class="form-heading"><%= t(".heading") %></h2>
-  <%= f.input :email, required: true %>
+  <%= f.input :email, autofocus: true, required: true %>
   <%= f.input :password, required: true %>
   <% if devise_mapping.rememberable? -%>
     <%= f.input :remember_me, as: :boolean %>
