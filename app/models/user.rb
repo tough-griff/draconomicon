@@ -22,16 +22,26 @@
 #  locked_at              :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  name                   :string(32)       default(""), not null
+#  slug                   :string           not null
 #
 # Indexes
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
+#  index_users_on_name                  (name) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name
+
+  validates :name, presence: true, uniqueness: true, length: { maximum: 32 }
+  validates :slug, uniqueness: true
+
   # Include default devise modules. Others available are:
   # :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,

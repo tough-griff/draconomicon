@@ -44,9 +44,6 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  # Include Formulaic DSL
-  config.include Formulaic::Dsl, type: :feature
-
   # t() and l() in specs without prefixing with I18n
   config.include AbstractController::Translation
 end

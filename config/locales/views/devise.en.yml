@@ -17,14 +17,12 @@ en:
       edit:
         heading: "Edit user"
         confirmation_pending: "Currently pending confirmation for: %{email}"
-        submit: "Update"
         delete:
           heading: "Unhappy?"
           submit: "Cancel my account"
           confirmation: "Are you sure?"
       new:
         heading: "Sign up"
-        submit: "Sign up"
     sessions:
       new:
         heading: "Sign in"

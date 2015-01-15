@@ -1,7 +1,8 @@
 en:
   activerecord:
     models:
-      user: "user"
+      user: "User"
     attributes:
       user:
-        name: "username"
+        name: "Username"
+        slug: "Friendly ID"

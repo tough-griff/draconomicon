@@ -5,6 +5,7 @@ gem "rails", "4.2.0"
 
 gem "bourbon"
 gem "devise"
+gem "friendly_id"
 gem "haml-rails"
 gem "jbuilder"
 gem "jquery-rails"
@@ -38,6 +39,7 @@ end
 group :test do
   gem "capybara"
   gem "database_cleaner", require: false
+  gem "factory_girl_rails"
   gem "formulaic"
   gem "poltergeist"
   gem "shoulda-matchers", require: false

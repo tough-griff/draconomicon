@@ -22,17 +22,37 @@
 #  locked_at              :datetime
 #  created_at             :datetime
 #  updated_at             :datetime
+#  name                   :string(32)       default(""), not null
+#  slug                   :string           not null
 #
 # Indexes
 #
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
+#  index_users_on_name                  (name) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { create(:user) }
+
+  subject { user }
+
+  it { is_expected.to respond_to(:email) }
+  it { is_expected.to respond_to(:name) }
+  it { is_expected.to respond_to(:slug) }
+
+  it { is_expected.to be_valid }
+
+  # name validations
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_uniqueness_of(:name) }
+  it { is_expected.to ensure_length_of(:name).is_at_most(32) }
+
+  # slug validations
+  it { is_expected.to validate_uniqueness_of(:slug) }
 end
