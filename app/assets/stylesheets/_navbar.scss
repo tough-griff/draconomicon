@@ -64,7 +64,9 @@
     }
 
     .nav-menu-right {
-      float: right;
+      @include media($horizontal-bar-mode) {
+        float: right;
+      }
     }
   }
 
