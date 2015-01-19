@@ -23,6 +23,7 @@ gem "unicorn"
 
 group :development do
   gem "annotate"
+  gem "ffaker", require: false
   gem "spring-commands-rspec"
   gem "spring"
   gem "web-console"

@@ -36,15 +36,19 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 
-class User < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :name
+FactoryGirl.define do
+  factory :user do
+    sequence(:name) { |n| "User #{n}" }
+    sequence(:email) { |n| "user_#{n}@example.com" }
+    password "foobarbaz"
+    password_confirmation "foobarbaz"
 
-  validates :name, presence: true, uniqueness: true, length: { maximum: 32 }
-  validates :slug, uniqueness: true
+    trait :invalid do
+      name ""
+    end
 
-  # Include default devise modules. Others available are:
-  # :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :trackable, :validatable, :confirmable, :lockable, :timeoutable
+    trait :admin do
+      admin true
+    end
+  end
 end
