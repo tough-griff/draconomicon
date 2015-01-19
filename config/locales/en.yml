@@ -11,11 +11,12 @@ en:
     new_user_password: "Forgot your password?"
     edit_user_password: "Change your password"
     cancel_user_registration: "Delete your account"
-    new_user_registration: "Sign up"
+    new_user_registration: "Register"
     edit_user_registration: "Edit user"
     new_user_confirmation: "Didn't receive confirmation instructions?"
     new_user_unlock: "Didn't receive unlock instructions?"
     root: "Home"
+    about: "About"
   time:
     formats:
       default: "%a, %b %-d, %Y at %r"
