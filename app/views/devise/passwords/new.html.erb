@@ -1,6 +1,6 @@
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
-  <h3><%= t(".heading") %></h3>
+  <h2><%= t(".heading") %></h2>
   <p><%= t(".description") %></p>
   <%= f.input :email, autofocus: true, required: true %>
   <%= f.submit t(".submit") %>

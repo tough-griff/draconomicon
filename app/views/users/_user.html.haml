@@ -1,0 +1,4 @@
+%li.user{ id: user.name }
+  = link_to user.name, user
+  - if user.admin?
+    %span.admin-tag Admin

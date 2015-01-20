@@ -1,6 +1,6 @@
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-  <h3><%= t(".heading") %></h3>
+  <h2><%= t(".heading") %></h2>
   <%= f.hidden_field :reset_password_token %>
   <%= f.input :password, autofocus: true, required: true, hint: true %>
   <%= f.input :password_confirmation, required: true %>

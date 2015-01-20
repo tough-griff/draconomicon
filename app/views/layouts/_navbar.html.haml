@@ -1,16 +1,18 @@
-%header.nav{role: "banner"}
+%header.nav{ role: "banner" }
   .nav-container
     = link_to t(".mobile_menu"), "javascript:void(0)", class: "nav-menu-button", id: "js-mobile-menu"
-    %nav{role: "navigation"}
+    %nav{ role: "navigation" }
       %ul.nav-menu.show#js-nav-menu
         = nav_link_to t("paths.root"), root_path
         = nav_link_to t("paths.about"), "/about"
         = nav_link_to t("paths.contact"), "/contact"
         %ul.nav-menu-right
+          = nav_link_to t("paths.users"), users_path
           - if user_signed_in?
             %li.nav-link.more
               = link_to current_user.name, "javascript:void(0)"
               %ul.submenu
+                %li= link_to t("paths.user"), current_user
                 %li= link_to t("paths.edit_user_registration"), edit_user_registration_path
                 %li= link_to t("paths.destroy_user_session"), destroy_user_session_path, method: :delete
           - else

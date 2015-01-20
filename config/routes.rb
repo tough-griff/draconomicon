@@ -22,12 +22,15 @@
 #              user_unlock POST   /users/unlock(.:format)           devise/unlocks#create
 #          new_user_unlock GET    /users/unlock/new(.:format)       devise/unlocks#new
 #                          GET    /users/unlock(.:format)           devise/unlocks#show
+#                    users GET    /users(.:format)                  users#index
+#                     user GET    /users/:id(.:format)              users#show
 #                     root GET    /                                 home#index
 #                          GET    /*path(.:format)                  application#catchall
 #
 
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: %i(index show)
 
   root to: "home#index"
   get "*path", to: "application#catchall"

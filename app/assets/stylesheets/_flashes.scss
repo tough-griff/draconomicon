@@ -5,6 +5,7 @@
   .flash {
     @extend %flash-base;
     @include animation(fade-in 500ms);
+    border-radius: $base-border-radius;
     font-weight: normal;
     padding-right: 20px;
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe ApplicationHelper, type: :helper do
+RSpec.describe ApplicationHelper do
   before { allow(self).to receive(:current_page?).and_return(false) }
 
   describe "#nav_link_to" do
