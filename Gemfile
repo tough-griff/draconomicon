@@ -25,6 +25,7 @@ gem "unicorn"
 
 group :development do
   gem "annotate"
+  gem "bitters", require: false
   gem "ffaker", require: false
   gem "spring-commands-rspec"
   gem "spring"

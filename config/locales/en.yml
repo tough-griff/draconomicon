@@ -4,41 +4,8 @@ en:
     formats:
       default: "%m/%d/%Y"
       with_weekday: "%a %m/%d/%y"
-  paths:
-    new_user_session: "Sign in"
-    destroy_user_session: "Sign out"
-    new_user_password: "Forgot your password?"
-    edit_user_password: "Change your password"
-    cancel_user_registration: "Delete your account"
-    new_user_registration: "Register"
-    edit_user_registration: "Edit user"
-    new_user_confirmation: "Didn't receive confirmation instructions?"
-    new_user_unlock: "Didn't receive unlock instructions?"
-    users: "Users"
-    user: "Profile"
-    root: "Home"
-    about: "About"
-    contact: "Contact"
   time:
     formats:
       default: "%a, %b %-d, %Y at %r"
       date: "%b %-d, %Y"
       short: "%B %d"
-  titles:
-    application: "The Draconomicon"
-    devise:
-      confirmations:
-        new: "Resend confirmation"
-      passwords:
-        edit: "Change your password"
-        new: "Reset password"
-      registrations:
-        edit: "Edit user"
-        new: "Sign up"
-      sessions:
-        new: "Sign in"
-      unlocks:
-        new: "Unlock account"
-    users:
-      index: "All users"
-      show: "%{user}"

@@ -1,0 +1,16 @@
+en:
+  paths:
+    new_user_session: "Sign in"
+    destroy_user_session: "Sign out"
+    new_user_password: "Forgot your password?"
+    edit_user_password: "Change your password"
+    cancel_user_registration: "Delete your account"
+    new_user_registration: "Register"
+    edit_user_registration: "Edit user"
+    new_user_confirmation: "Didn't receive confirmation instructions?"
+    new_user_unlock: "Didn't receive unlock instructions?"
+    users: "Users"
+    user: "Profile"
+    root: "Home"
+    about: "About"
+    contact: "Contact"

@@ -1,11 +1,17 @@
-// Libraries
+// Normalize.css comes first
 @import "normalize.css/normalize";
+
+// Bourbon/Neat/Bitters
 @import "bourbon";
 @import "bitters/base";
 @import "neat";
-@import "animate.css/animate";
+
+// Font Awesome
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+// Bower-rails Packages
+@import "animate.css/animate";
 
 // App-specific CSS
 @import "container";

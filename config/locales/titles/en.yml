@@ -1,0 +1,19 @@
+en:
+  titles:
+    application: "The Draconomicon"
+    devise:
+      confirmations:
+        new: "Resend confirmation"
+      passwords:
+        edit: "Change your password"
+        new: "Reset password"
+      registrations:
+        edit: "Edit user"
+        new: "Sign up"
+      sessions:
+        new: "Sign in"
+      unlocks:
+        new: "Unlock account"
+    users:
+      index: "All users"
+      show: "%{user}'s profile"
