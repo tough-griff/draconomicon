@@ -1,0 +1,11 @@
+-# TODO dropdowns
+%header.nav{ role: "banner" }
+  .container
+    %nav{ role: "navigation" }
+      %ul.navbar
+        = nav_link_to t("paths.root"), root_path
+        = nav_link_to t("paths.about"), "/about"
+        = nav_link_to t("paths.contact"), "/contact"
+      %ul.navbar.navbar-right
+        = nav_link_to t("paths.users"), users_path
+        -# TODO dropdown for sign in

@@ -1,7 +1,0 @@
-en:
-  layouts:
-    flash:
-      close_label: "Close alert"
-    navbar:
-      logo: "Logo Image"
-      mobile_menu: "Menu"

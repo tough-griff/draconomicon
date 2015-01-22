@@ -10,7 +10,9 @@
           = nav_link_to t("paths.users"), users_path
           - if user_signed_in?
             %li.nav-link.more
-              = link_to current_user.name, "javascript:void(0)"
+              = link_to "javascript:void(0)" do
+                = icon "star" if current_user.admin?
+                = current_user.name
               %ul.submenu
                 %li= link_to t("paths.user"), current_user
                 %li= link_to t("paths.edit_user_registration"), edit_user_registration_path
