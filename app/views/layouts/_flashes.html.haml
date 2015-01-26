@@ -2,5 +2,6 @@
   - flash.each do |key, value|
     - next unless value.is_a?(String)
     %div{ class: "flash #{key}", id: "flash-#{key}", role: "alertdialog" }
+      -# TODO perfectly formatted close button
       %span.flash-close{ role: "button", "aria-hidden": true } &times;
       = value

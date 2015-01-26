@@ -1,9 +1,9 @@
-exclude: "app/assets/stylesheets/base/**"
+exclude: "app/assets/stylesheets/bitters/**"
 
 linters:
   NestingDepth:
     enabled: true
-    max_depth: 4
+    max_depth: 5
   SelectorDepth:
     enabled: true
     max_depth: 4

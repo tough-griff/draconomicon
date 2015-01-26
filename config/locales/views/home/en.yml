@@ -1,4 +1,6 @@
 en:
   home:
+    about:
+      heading: "About"
     index:
       heading: "Welcome to The Draconomicon"

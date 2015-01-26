@@ -1,1 +1,3 @@
-%li= link_to_unless current_page.first?, t("views.pagination.previous").html_safe, url, rel: "prev", remote: remote
+%li<
+  = link_to_unless current_page.first?, t("views.pagination.previous").html_safe, url, rel: "prev", remote: remote do
+    %span.disabled= t("views.pagination.previous").html_safe

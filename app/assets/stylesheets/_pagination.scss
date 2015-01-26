@@ -2,56 +2,66 @@
   $pagination-border-color: $base-border-color;
   $pagination-border: 1px solid $pagination-border-color;
   $pagination-background: lighten($pagination-border-color, 10);
+  $pagination-disabled-background: darken($pagination-background, 5);
   $pagination-hover-background: lighten($pagination-background, 5);
   $pagination-color: $base-font-color;
+  $pagination-disabled-color: lighten($pagination-color, 20);
 
   text-align: center;
+  margin-bottom: 10px;
 
   ul {
-    display: inline;
-    text-align: center;
+    display: inline-block;
 
     li {
       display: inline;
 
-      a {
+      a,
+      span {
         @include transition(all .2s ease-in-out);
+        border: 1px solid transparent;
+        float: left;
+        margin-left: -1px;
+        padding: ($base-spacing / 4) ($gutter / 2);
+        position: relative;
+        width: 38px;
+      }
+
+      a {
         background: $pagination-background;
         border: $pagination-border;
-        border-radius: $base-border-radius;
         color: $pagination-color;
-        outline: none;
-        padding: ($base-spacing / 4) ($gutter / 2);
 
         &:hover,
         &:focus {
           background: $pagination-hover-background;
           color: $base-link-color;
         }
+      }
 
-        &:active {
-          background: $pagination-background;
+      span {
+        background: $base-link-color;
+        color: $pagination-hover-background;
+
+        &.disabled {
+          background: $pagination-disabled-background;
+          border: $pagination-border;
+          color: $pagination-disabled-color;
         }
       }
 
-      &.current a {
-        background: $pagination-background;
-        color: $base-link-color;
-        cursor: not-allowed;
-      }
-    }
-
-    ul li {
-      display: none;
-
-      @include media($large-screen) {
-        display: inline;
+      &:first-child {
+        a,
+        span {
+          @include border-left-radius($base-border-radius);
+        }
       }
 
-      &:nth-child(1),
-      &:nth-child(2),
-      &:nth-child(3) {
-        display: inline;
+      &:last-child {
+        a,
+        span {
+          @include border-right-radius($base-border-radius);
+        }
       }
     }
   }

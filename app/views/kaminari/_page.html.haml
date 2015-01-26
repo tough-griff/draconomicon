@@ -1,2 +1,3 @@
-%li{ class: page.current? && "current" }<
-  = link_to page, url, remote: remote, rel: page.next? ? "next" : page.prev? ? "prev" : nil
+%li<
+  = link_to_unless page.current?, page, url, remote: remote, rel: page.next? ? "next" : page.prev? ? "prev" : nil do
+    %span= page

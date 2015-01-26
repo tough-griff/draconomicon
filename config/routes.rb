@@ -25,6 +25,7 @@
 #                    users GET    /users(.:format)                  users#index
 #                     user GET    /users/:id(.:format)              users#show
 #                     root GET    /                                 home#index
+#                     home GET    /home(.:format)                   home#index
 #                          GET    /*path(.:format)                  application#catchall
 #
 
@@ -33,5 +34,7 @@ Rails.application.routes.draw do
   resources :users, only: %i(index show)
 
   root to: "home#index"
+  get "home", to: "home#index"
+  get "about", to: "home#about"
   get "*path", to: "application#catchall"
 end

@@ -6,8 +6,8 @@ RSpec.describe ApplicationHelper do
       before { allow(self).to receive(:current_page?).and_return(false) }
 
       it "does not add the 'active' class" do
-        expect(self).to receive(:link_to).with("text", "url", nil)
-        nav_link_to("text", "url")
+        expect(self).to receive(:link_to).with("text", "url", method: :delete)
+        nav_link_to("text", "url", method: :delete)
       end
     end
 
@@ -15,7 +15,7 @@ RSpec.describe ApplicationHelper do
       before { allow(self).to receive(:current_page?).and_return(true) }
 
       it "adds the 'active' class" do
-        expect(self).to receive(:link_to).with("text", "url", class: "active")
+        expect(self).to receive(:link_to).with("text", "url", nil)
         nav_link_to("text", "url")
       end
     end

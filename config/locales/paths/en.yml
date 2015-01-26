@@ -12,5 +12,6 @@ en:
     users: "Users"
     user: "Profile"
     root: "Home"
+    home: "Home"
     about: "About"
     contact: "Contact"
