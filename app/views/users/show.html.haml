@@ -3,3 +3,8 @@
     %h3= @user.name
     - if @user.admin?
       %span.admin-tag Admin
+  .user-characters
+    %h3= Character.model_name.human.pluralize
+    %ul
+      - @user.characters.each do |character|
+        %li= link_to character.name, user_character_path(@user, character)

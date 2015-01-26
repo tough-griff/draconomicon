@@ -21,4 +21,14 @@ if Rails.env == "development"
     user.skip_confirmation!
     user.save!
   end
+
+  users = User.limit(5)
+  users.each do |user|
+    3.times do
+      character = user.characters.build do |c|
+        c.name = Faker::Name.first_name
+      end
+      character.save!
+    end
+  end
 end

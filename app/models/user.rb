@@ -37,6 +37,8 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :characters, dependent: :destroy
+
   extend FriendlyId
   friendly_id :name
 

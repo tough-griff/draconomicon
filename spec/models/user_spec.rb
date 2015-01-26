@@ -48,13 +48,12 @@ RSpec.describe User do
   it { is_expected.to respond_to(:slug) }
   it { is_expected.to respond_to(:admin) }
 
-  it { is_expected.to be_valid }
+  it { is_expected.to have_many(:characters) }
+  it { is_expected.to respond_to(:characters) }
 
-  # name validations
+  it { is_expected.to be_valid }
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_uniqueness_of(:name) }
   it { is_expected.to ensure_length_of(:name).is_at_most(32) }
-
-  # slug validations
   it { is_expected.to validate_uniqueness_of(:slug) }
 end

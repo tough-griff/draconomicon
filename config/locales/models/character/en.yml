@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      character: "Character"
+    attributes:
+      character:
+        name: "Character Name"
+        slug: "Friendly ID"
+        class_and_level: "Class and Level"
+        background: "Background"
+        player_name: "Player Name"
+        race: "Race"
+        alignment: "Alignment"
+        experience: "Experience Points"
+        age: "Age"
+        height: "Height"
+        weight: "Weight"
+        eyes: "Eyes"
+        skin: "Skin"
+        hair: "Hair"
