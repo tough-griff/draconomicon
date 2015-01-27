@@ -17,3 +17,5 @@ en:
     users:
       index: "All users"
       show: "%{user}'s profile"
+    characters:
+      show: "%{character}"

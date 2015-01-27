@@ -40,4 +40,19 @@ class Character < ActiveRecord::Base
 
   validates :name, presence: true
   validates :alignment, presence: true, inclusion: ALIGNMENTS
+
+  def description
+    "#{alignment_abbreviation} #{race} #{class_and_level}"
+  end
+
+  def to_s
+    return name if race.blank? || class_and_level.blank?
+    "#{name} (#{description})"
+  end
+
+  private
+
+  def alignment_abbreviation
+    alignment.split(" ").map(&:chr).join
+  end
 end

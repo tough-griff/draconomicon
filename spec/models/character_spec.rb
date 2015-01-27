@@ -65,4 +65,27 @@ RSpec.describe Character do
                  "Lawful Neutral", "True Neutral", "Chaotic Neutral",
                  "Lawful Evil", "Neutral Evil", "Chaotic Evil"])
   end
+
+  describe "#to_s" do
+    before do
+      character.name = "Havel"
+      character.alignment = "Chaotic Neutral"
+      character.race = "Human"
+      character.class_and_level = "Fighter 10"
+    end
+
+    specify { expect(character.to_s).to eq("Havel (CN Human Fighter 10)") }
+
+    context "with blank race" do
+      before { character.race = "" }
+
+      specify { expect(character.to_s).to eq("Havel") }
+    end
+
+    context "with blank class and level" do
+      before { character.class_and_level = "" }
+
+      specify { expect(character.to_s).to eq("Havel") }
+    end
+  end
 end

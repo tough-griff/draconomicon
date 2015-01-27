@@ -56,4 +56,8 @@ RSpec.describe User do
   it { is_expected.to validate_uniqueness_of(:name) }
   it { is_expected.to ensure_length_of(:name).is_at_most(32) }
   it { is_expected.to validate_uniqueness_of(:slug) }
+
+  describe "#to_s" do
+    specify { expect(user.to_s).to eq(user.name) }
+  end
 end

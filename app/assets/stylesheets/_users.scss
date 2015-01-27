@@ -13,4 +13,10 @@
 // ============
 // User Profile
 // ============
-// TODO
+.user-info {
+  @include span-columns(4);
+}
+
+.user-profile {
+  @include span-columns(8);
+}
