@@ -1,49 +1,91 @@
-// TODO dropdowns & mobile-friendly
-.nav {
-  $nav-background: $dark-gray;
-  $nav-background-active: darken($nav-background, 10);
-  $nav-color: transparentize(#fff, .3);
-  $nav-color-hover: #fff;
-  $nav-margin-bottom: 20px;
-  $nav-height: 50px;
-  $nav-padding: 1em;
+.navbar {
+  $navbar-background-color: #5b5e63;
+  $navbar-background-color-hover: darken($navbar-background-color, 10%);
+  $navbar-background-color-active: darken($navbar-background-color, 5%);
+  $navbar-height: 3em;
+  $navbar-submenu-width: 12em;
+  $navbar-submenu-separator-color: lighten($navbar-background-color, 10%);
 
-  background-color: $nav-background;
-  border: 1px solid transparent;
-  margin-bottom: $nav-margin-bottom;
-  min-height: $nav-height;
-  z-index: 999;
+  @include clearfix;
+  background-color: $navbar-background-color;
+  min-height: $navbar-height;
 
-  .navbar {
-    @include clearfix;
-    display: inline-block;
+  .navbar-container {
+    @include outer-container;
+  }
+
+  ul {
     float: left;
-    list-style: none;
-    margin-bottom: 0;
-    padding-left: 0;
+    text-align: left;
 
     &.navbar-right {
       float: right;
+      text-align: right;
     }
 
     > li {
       display: inline-block;
-      position: relative;
 
       > a {
-        color: $nav-color;
+        color: #fff;
         display: inline-block;
-        padding: $nav-padding;
-        position: relative;
+        font-weight: bold;
+        padding: .75em .5em;
 
         &:focus,
         &:hover {
-          color: $nav-color-hover;
+          background-color: $navbar-background-color-hover;
         }
       }
 
       &.active > a {
-        background: $nav-background-active;
+        background-color: $navbar-background-color-active;
+      }
+    }
+  }
+
+  .more {
+    position: relative;
+
+    > a {
+      &:focus,
+      &:hover {
+        background-color: $navbar-background-color;
+      }
+
+      &:after {
+        content: "\25BE";
+        padding-left: .2em;
+      }
+    }
+
+    &:focus > .submenu,
+    &:hover > .submenu {
+      display: block;
+    }
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: $navbar-height;
+
+    > li {
+      display: block;
+
+      > a {
+        background-color: $navbar-background-color;
+        padding: .75em;
+        width: $navbar-submenu-width;
+      }
+
+      &:last-child > a {
+        @include border-bottom-radius($base-border-radius);
+      }
+
+      &.separator {
+        background-color: $navbar-submenu-separator-color;
+        height: 1px;
       }
     }
   }

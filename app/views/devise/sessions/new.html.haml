@@ -1,0 +1,9 @@
+= simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "devise sign-in" } do |f|
+  %h2.form-heading= t(".heading")
+  = f.input :email, autofocus: true, required: true, wrapper_html: { class: "connected top" }
+  = f.input :password, required: true, wrapper_html: { class: "connected bottom" }
+  - if devise_mapping.rememberable?
+    = f.input :remember_me, as: :boolean, wrapper_html: { class: "remember-me" }
+  .form-actions
+    = f.submit t(".submit"), class: "submit"
+    = render "devise/shared/links"

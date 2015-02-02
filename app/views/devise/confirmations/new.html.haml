@@ -1,0 +1,7 @@
+= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { class: "devise", method: :post }) do |f|
+  %h2= t(".heading")
+  %p= t(".description")
+  = f.input :email, autofocus: true, required: true, wrapper_html: { class: "hide-label" }
+  .form-actions
+    = f.submit t(".submit"), class: "submit"
+    = render "devise/shared/links"

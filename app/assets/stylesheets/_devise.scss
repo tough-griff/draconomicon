@@ -1,0 +1,46 @@
+.devise {
+  @include shift(3);
+  @include span-columns(6);
+
+  .form-heading {
+    margin-bottom: $small-spacing;
+  }
+
+  .form-actions {
+    @include shift(1 of 6);
+    @include span-columns(4 of 6);
+
+    .submit {
+      @include fill-parent;
+      margin-bottom: $small-spacing;
+    }
+  }
+}
+
+.form-group {
+  &.connected,
+  &.hide-label {
+    > label {
+      display: none;
+    }
+
+    &.top > input {
+      @include border-bottom-radius(0);
+      margin-bottom: -1px;
+    }
+
+    &.middle > input {
+      border-radius: 0;
+      margin-bottom: -1px;
+    }
+
+    &.bottom > input {
+      @include border-top-radius(0);
+      margin-bottom: $small-spacing;
+    }
+  }
+
+  &.remember-me {
+    margin-bottom: $small-spacing;
+  }
+}

@@ -1,16 +1,19 @@
 -# TODO dropdowns
-%header.nav{ role: "banner" }
-  .container
-    %nav{ role: "navigation" }
-      %ul.navbar
-        = nav_link_to t("paths.home"), home_path
-        = nav_link_to t("paths.about"), about_path
-        = nav_link_to t("paths.contact"), "/contact"
-      %ul.navbar.navbar-right
-        = nav_link_to t("paths.users"), users_path
-        -# TODO dropdown for sign in
-        - if user_signed_in?
-          = nav_link_to t("paths.user"), current_user
-          = nav_link_to t("paths.destroy_user_session"), destroy_user_session_path, method: :delete
-        - else
-          = nav_link_to t("paths.new_user_session"), new_user_session_path
+%nav.navbar{ role: "navigation" }
+  .navbar-container
+    %ul
+      = nav_link_to t("paths.home"), home_path
+      = nav_link_to t("paths.about"), about_path
+      = nav_link_to t("paths.contact"), "/contact"
+    %ul.navbar-right
+      = nav_link_to t("paths.users"), users_path
+      - if user_signed_in?
+        %li.more
+          = link_to current_user, "javascript:void(0)"
+          %ul.submenu
+            = nav_link_to t("paths.user"), current_user
+            = nav_link_to t("paths.edit_user_registration"), edit_user_registration_path
+            %li.separator
+            %li= link_to t("paths.destroy_user_session"), destroy_user_session_path, method: :delete
+      - else
+        = nav_link_to t("paths.new_user_session"), new_user_session_path

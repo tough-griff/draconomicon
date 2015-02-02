@@ -1,3 +1,4 @@
 .container {
   @include outer-container;
+  margin-top: $base-spacing;
 }

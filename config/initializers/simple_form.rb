@@ -7,7 +7,7 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
-  config.wrappers :default, class: :input, hint_class: "input-hint", error_class: "input-error" do |b|
+  config.wrappers :default, class: "form-group", error_class: "input-error" do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
@@ -112,6 +112,7 @@ SimpleForm.setup do |config|
 
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
+  config.generate_additional_classes_for = []
 
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true

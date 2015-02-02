@@ -1,14 +1,13 @@
 .pagination {
-  $pagination-border-color: $base-border-color;
-  $pagination-border: 1px solid $pagination-border-color;
-  $pagination-background: lighten($pagination-border-color, 10);
+  $pagination-border: 1px solid $base-border-color;
+  $pagination-background: lighten($base-border-color, 10);
   $pagination-disabled-background: darken($pagination-background, 5);
   $pagination-hover-background: lighten($pagination-background, 5);
   $pagination-color: $base-font-color;
   $pagination-disabled-color: lighten($pagination-color, 20);
 
+  margin-bottom: $base-spacing;
   text-align: center;
-  margin-bottom: 10px;
 
   ul {
     display: inline-block;
@@ -35,12 +34,12 @@
         &:hover,
         &:focus {
           background: $pagination-hover-background;
-          color: $base-link-color;
+          color: $action-color;
         }
       }
 
       span {
-        background: $base-link-color;
+        background: $action-color;
         color: $pagination-hover-background;
 
         &.disabled {

@@ -1,18 +1,12 @@
-// ===========
-// Users Index
-// ===========
 .users-heading {
-  margin-bottom: 20px;
+  margin-bottom: $base-spacing;
 }
 
 .users {
-  margin-bottom: 20px;
+  margin-bottom: $base-spacing;
   // TODO
 }
 
-// ============
-// User Profile
-// ============
 .user-info {
   @include span-columns(4);
 }

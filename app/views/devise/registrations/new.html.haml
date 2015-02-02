@@ -1,0 +1,9 @@
+= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "devise sign-up" } do |f|
+  %h2.form-heading= t(".heading")
+  = f.input :name, autofocus: true, required: true, wrapper_html: { class: "connected top" }
+  = f.input :email, required: true, wrapper_html: { class: "connected middle" }
+  = f.input :password, required: true, wrapper_html: { class: "connected middle" }
+  = f.input :password_confirmation, required: true, wrapper_html: { class: "connected bottom" }
+  .form-actions
+    = f.submit class: "submit"
+    = render "devise/shared/links"
