@@ -41,6 +41,11 @@ class Character < ActiveRecord::Base
   validates :name, presence: true
   validates :alignment, presence: true, inclusion: ALIGNMENTS
 
+  # TODO
+  def image
+    '<img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png">'.html_safe
+  end
+
   def description
     "#{alignment_abbreviation} #{race} #{class_and_level}"
   end

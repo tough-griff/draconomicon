@@ -8,9 +8,66 @@
 }
 
 .user-info {
-  @include span-columns(4);
+  @include span-columns(3);
 }
 
 .user-profile {
-  @include span-columns(8);
+  @include span-columns(9);
+}
+
+.user-characters .character-card {
+  $character-card-background: lighten($base-border-color, 10%);
+  $character-card-hover-background: lighten($character-card-background, 10%);
+  $character-card-image-background: #dbd199;
+  $character-card-image-hover-background: lighten($character-card-image-background, 5%);
+  $character-card-line-height: $base-line-height * 1em;
+
+  @include omega(3n);
+  @include span-columns(3 of 9);
+  @include transition(all .2s ease-in-out);
+  background-color: $character-card-background;
+  border: 1px solid $base-border-color;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+
+  .character-image {
+    max-height: 150px;
+    overflow: hidden;
+
+    img {
+      @include border-top-radius($base-border-radius);
+      @include transition(all .2s ease-in-out);
+      background-color: $character-card-image-background;
+      width: 100%;
+    }
+  }
+
+  .character-header {
+    @include transition(all .2s ease-in-out);
+    border-bottom: 1px solid $base-border-color;
+    color: $base-font-color;
+    font-weight: bold;
+    line-height: $character-card-line-height;
+    padding: ($base-spacing / 3) $small-spacing;
+  }
+
+  .character-description {
+    @include transition(all .2s ease-in-out);
+    color: $base-font-color;
+    line-height: $character-card-line-height;
+    padding: $small-spacing;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $character-card-hover-background;
+
+    .character-image img {
+      background-color: $character-card-image-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $character-card-background;
+  }
 }

@@ -1,9 +1,10 @@
 .user-info
-  %h3= @user.name
+  %h3
+    = gravatar_for(@user)
+    = @user.name
   - if @user.admin?
     %span.admin-tag= t("admin")
 .user-profile
   %h3= Character.model_name.human.pluralize
-  %ul.user-characters
-    - @user.characters.each do |character|
-      %li= link_to character.name, user_character_path(@user, character)
+  .user-characters
+    = render collection: @user.characters, partial: "characters/card", as: :character
