@@ -1,0 +1,14 @@
+= simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "devise", method: :put } do |f|
+  %h2.form-heading= t(".heading")
+  = f.input :name, autofocus: true, required: true, hint: true
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    %p= t(".confirmation_pending", email: resource.unconfirmed_email)
+  = f.input :email, required: true, hint: true
+  = f.input :password, required: false, hint: true
+  = f.input :password_confirmation, required: false
+  = f.input :current_password, required: true, hint: true
+  .form-actions
+    = f.submit class: "submit"
+%form
+  %h3.form-heading= t(".delete.heading")
+  = link_to t(".delete.submit"), registration_path(resource_name), data: { confirm: t(".delete.confirmation") }, method: :delete

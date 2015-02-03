@@ -3,6 +3,7 @@
   @include span-columns(6);
 
   .form-heading {
+    font-size: $base-font-size * 1.5;
     margin-bottom: $small-spacing;
   }
 
@@ -14,33 +15,5 @@
       @include fill-parent;
       margin-bottom: $small-spacing;
     }
-  }
-}
-
-.form-group {
-  &.connected,
-  &.hide-label {
-    > label {
-      display: none;
-    }
-
-    &.top > input {
-      @include border-bottom-radius(0);
-      margin-bottom: -1px;
-    }
-
-    &.middle > input {
-      border-radius: 0;
-      margin-bottom: -1px;
-    }
-
-    &.bottom > input {
-      @include border-top-radius(0);
-      margin-bottom: $small-spacing;
-    }
-  }
-
-  &.remember-me {
-    margin-bottom: $small-spacing;
   }
 }

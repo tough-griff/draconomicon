@@ -1,0 +1,93 @@
+.form-group {
+  $error-border-color: darken($error-color, 35%);
+  $form-error-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($error-border-color, $lightness: -5%, $alpha: -.3);
+
+  &.connected,
+  &.hide-label {
+    > label {
+      display: none;
+    }
+  }
+
+  &.connected {
+    > input {
+      margin-bottom: -1px;
+    }
+
+    &.top > input {
+      @include border-bottom-radius(0);
+    }
+
+    &.middle > input {
+      border-radius: 0;
+    }
+
+    &.bottom > input {
+      @include border-top-radius(0);
+      margin-bottom: $small-spacing;
+    }
+  }
+
+  &.remember-me {
+    margin-bottom: $small-spacing;
+  }
+
+  &.input-hint {
+    > input {
+      @include border-bottom-radius(0);
+      margin-bottom: -1px;
+    }
+
+    > .hint {
+      @include border-bottom-radius($base-border-radius);
+      background-color: $action-color;
+      color: #fff;
+      display: block;
+      margin-bottom: $small-spacing;
+      padding: 0 ($base-spacing / 3);
+    }
+
+    &.input-error > .hint,
+    &.connected > .hint {
+      border-radius: 0;
+      margin-bottom: -1px;
+    }
+
+    &.connected.bottom > .error {
+      @include border-bottom-radius($base-border-radius);
+      margin-bottom: $small-spacing;
+    }
+  }
+
+  &.input-error {
+    > input {
+      @include border-bottom-radius(0);
+      border-color: $error-border-color;
+      margin-bottom: -1px;
+
+      &:focus {
+        box-shadow: $form-error-box-shadow-focus;
+        outline: none;
+      }
+    }
+
+    > .error {
+      @include border-bottom-radius($base-border-radius);
+      background-color: $error-border-color;
+      color: #fff;
+      display: block;
+      margin-bottom: $small-spacing;
+      padding: 0 ($base-spacing / 3);
+    }
+
+    &.connected > .error {
+      border-radius: 0;
+      margin-bottom: -1px;
+    }
+
+    &.connected.bottom > .error {
+      @include border-bottom-radius($base-border-radius);
+      margin-bottom: $small-spacing;
+    }
+  }
+}
