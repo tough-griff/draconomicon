@@ -10,10 +10,11 @@ RSpec.feature "Editing a user" do
 
   scenario "with invalid information" do
     expect do
-      fill_form_and_submit(:user, :edit, attributes_for(:user, :invalid, name: "New Name"))
+      fill_form_and_submit(:user, :edit, attributes_for(:user, name: "New Name"))
     end.not_to change(user, :name)
 
-    expect(page).to have_content("error")
+    expect(page).to have_selector("span.error", text: "can't be blank")
+    expect(user.name).not_to eq("New Name")
   end
 
   scenario "with valid information" do

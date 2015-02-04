@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.2.0
+
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c 'create database draconomicon-test;' -U postgres
+env:
+  - RAILS_ENV=test
+notifications:
+  email:
+    recipients:
+      - gryphon92@gmail.com
+    on_success: change
+    on_failure: always
+script:
+  - bundle exec rake db:migrate
+  - bundle exec rake spec
