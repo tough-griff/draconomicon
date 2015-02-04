@@ -8,8 +8,8 @@ default: &default
 
 development:
   <<: *default
-  database: the-draconomicon_development
+  database: draconomicon_development
 
 test:
   <<: *default
-  database: the-draconomicon_test
+  database: draconomicon_test

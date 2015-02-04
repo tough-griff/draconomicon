@@ -14,5 +14,6 @@
 
 # Misc.
 .env
+.envrc
 .powenv
 .powrc
