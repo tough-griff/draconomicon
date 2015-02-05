@@ -1,7 +1,0 @@
-{
-  "name": "dsl-generated dependencies",
-  "dependencies": {
-    "normalize.css": "latest",
-    "animate.css": "latest"
-  }
-}

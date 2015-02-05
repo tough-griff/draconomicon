@@ -9,7 +9,7 @@ BowerRails.configure do |config|
   config.resolve_before_precompile = true
 
   # Invokes rake bower:clean before precompilation. Defaults to false
-  config.clean_before_precompile = true
+  # config.clean_before_precompile = true
 
   # Invokes rake bower:install:deployment instead rake bower:install. Defaults to false
   # config.use_bower_install_deployment = true
