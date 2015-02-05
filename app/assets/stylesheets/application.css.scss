@@ -1,5 +1,5 @@
 // Normalize.css comes first
-@import "normalize.css/normalize";
+@import "normalize-rails";
 
 // Bourbon/Neat/Bitters
 @import "bourbon";
@@ -10,8 +10,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-// Bower-rails Packages
-@import "animate.css/animate";
+// Animate.css
+@import "animate";
 
 // App-specific CSS
 @import "variables";
