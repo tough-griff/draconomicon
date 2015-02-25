@@ -31,11 +31,11 @@
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
 
   .character-image {
-    max-height: 150px;
+    height: 150px;
     overflow: hidden;
 
     img {
-      @include border-top-radius($base-border-radius);
+      @include border-top-radius($base-border-radius - 1);
       @include transition(all .2s ease-in-out);
       background-color: $character-card-image-background;
       width: 100%;

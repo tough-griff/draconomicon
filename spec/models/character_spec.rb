@@ -2,24 +2,24 @@
 #
 # Table name: characters
 #
-#  id              :integer          not null, primary key
-#  user_id         :integer
-#  name            :string           default(""), not null
-#  slug            :string           not null
-#  class_and_level :text
-#  background      :string
-#  player_name     :string
-#  race            :string
-#  alignment       :string           default("True Neutral"), not null
-#  experience      :integer          default("0")
-#  age             :integer
-#  height          :string
-#  weight          :string
-#  eyes            :string
-#  skin            :string
-#  hair            :string
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id           :integer          not null, primary key
+#  user_id      :integer
+#  name         :string           default(""), not null
+#  slug         :string           not null
+#  class_levels :text
+#  background   :string
+#  player_name  :string
+#  race         :string
+#  alignment    :string           default("True Neutral"), not null
+#  experience   :integer          default("0")
+#  age          :integer
+#  height       :string
+#  weight       :string
+#  eyes         :string
+#  skin         :string
+#  hair         :string
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 # Indexes
 #
@@ -36,7 +36,7 @@ RSpec.describe Character do
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:slug) }
-  it { is_expected.to respond_to(:class_and_level) }
+  it { is_expected.to respond_to(:class_levels) }
   it { is_expected.to respond_to(:background) }
   it { is_expected.to respond_to(:player_name) }
   it { is_expected.to respond_to(:race) }
@@ -66,26 +66,32 @@ RSpec.describe Character do
                  "Lawful Evil", "Neutral Evil", "Chaotic Evil"])
   end
 
+  describe "#character_level" do
+    before { subject.class_levels = { rgr: 7, rog: 3, ftr: 2 } }
+
+    specify { expect(subject.character_level).to eq(12) }
+  end
+
   describe "#to_s" do
     before do
-      character.name = "Havel"
-      character.alignment = "Chaotic Neutral"
-      character.race = "Human"
-      character.class_and_level = "Fighter 10"
+      subject.name = "Havel"
+      subject.alignment = "Chaotic Neutral"
+      subject.race = "Human"
+      subject.class_levels = { ftr: 10, clr: 3 }
     end
 
-    specify { expect(character.to_s).to eq("Havel (CN Human Fighter 10)") }
+    specify { expect(subject.to_s).to eq("Havel (CN Human Ftr 10/Clr 3)") }
 
     context "with blank race" do
-      before { character.race = "" }
+      before { subject.race = "" }
 
-      specify { expect(character.to_s).to eq("Havel") }
+      specify { expect(subject.to_s).to eq("Havel") }
     end
 
     context "with blank class and level" do
-      before { character.class_and_level = "" }
+      before { subject.class_levels = {} }
 
-      specify { expect(character.to_s).to eq("Havel") }
+      specify { expect(subject.to_s).to eq("Havel") }
     end
   end
 end

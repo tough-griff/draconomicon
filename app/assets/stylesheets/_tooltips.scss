@@ -1,0 +1,153 @@
+// Stolen from GitHub's CSS
+.tooltipped {
+  $tooltip-background-color: transparentize(#000, .2);
+  $tooltip-font: normal normal 10px/1.5 $base-font-family;
+  $tooltip-z-index: 99999;
+
+  position: relative;
+
+  &:before {
+    border: 5px solid transparent;
+    color: $tooltip-background-color;
+    content: "";
+    display: none;
+    height: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    z-index: $tooltip-z-index;
+  }
+
+  &:after {
+    background-color: $tooltip-background-color;
+    border-radius: $base-border-radius;
+    color: #fff;
+    content: attr(aria-label);
+    display: none;
+    font: $tooltip-font;
+    -webkit-font-smoothing: subpixel-antialiased;
+    line-height: 1.5;
+    padding: 5px 8px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: pre;
+    word-wrap: break-word;
+    z-index: $tooltip-z-index;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &:before,
+    &:after {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+
+  &-n,
+  &-s {
+    &:after {
+      @include transform(translateX(50%));
+    }
+  }
+
+  &-n,
+  &-ne,
+  &-nw {
+    &:before {
+      border-top-color: $tooltip-background-color;
+      bottom: auto;
+      margin-right: -5px;
+      right: 50%;
+      top: -5px;
+    }
+
+    &:after {
+      bottom: 100%;
+      margin-bottom: 5px;
+      right: 50%;
+    }
+  }
+
+  &-ne:after {
+    left: 50%;
+    margin-left: -15px;
+    right: auto;
+  }
+
+  &-nw:after {
+    margin-right: -15px;
+  }
+
+  &-s,
+  &-se,
+  &-sw {
+    &:before {
+      border-bottom-color: $tooltip-background-color;
+      bottom: -5px;
+      margin-right: -5px;
+      right: 50%;
+      top: auto;
+    }
+
+    &:after {
+      margin-top: 5px;
+      right: 50%;
+      top: 100%;
+    }
+  }
+
+  &-se:after {
+    left: 50%;
+    margin-left: -15px;
+    right: auto;
+  }
+
+  &-sw:after {
+    margin-right: -15px;
+  }
+
+  &-e,
+  &-w {
+    &:after {
+      @include transform(translateY(50%));
+    }
+  }
+
+  &-e {
+    &:before {
+      border-right-color: $tooltip-background-color;
+      bottom: 50%;
+      margin-top: -5px;
+      right: -5px;
+      top: 50%;
+    }
+
+    &:after {
+      bottom: 50%;
+      left: 100%;
+      margin-left: 5px;
+    }
+  }
+
+  &-w {
+    &:before {
+      border-left-color: $tooltip-background-color;
+      bottom: 50%;
+      left: -5px;
+      margin-top: -5px;
+      top: 50%;
+    }
+
+    &:after {
+      bottom: 50%;
+      margin-right: 5px;
+      right: 100%;
+    }
+  }
+}

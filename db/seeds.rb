@@ -1,6 +1,6 @@
 require "ffaker"
 
-CLASSES = %w(Barbarian Bard Cleric Druid Fighter Monk Paladin Ranger Rogue Sorcerer Wizard)
+CLASSES = %i(bbn brd clr drd ftr mnk pal rgr rog src wiz)
 RACES = %w(Human Dwarf Elf Gnome Half-Elf Half-Orc Halfling Drow)
 
 if Rails.env == "development"
@@ -30,7 +30,7 @@ if Rails.env == "development"
     3.times do
       character = user.characters.build do |c|
         c.name = Faker::Name.first_name
-        c.class_and_level = "#{CLASSES.sample} #{rand(1..20)}"
+        c.class_levels = { CLASSES.sample => rand(1..20) }
         c.player_name = user.name
         c.race = RACES.sample
         c.alignment = Character::ALIGNMENTS.sample

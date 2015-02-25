@@ -1,4 +1,4 @@
 = link_to [character.user, character], class: "character-card" do
-  .character-image= character.image
+  .character-image= image_tag character.image_url, alt: "Placeholder"
   .character-header= character.name
   .character-description= character.description
