@@ -1,10 +1,12 @@
 %nav.navbar{ role: "navigation" }
   .navbar-container
-    %ul
+    = link_to "javascript:void(0)", class: "navbar-menu-button", "aria-label": "Toggle Menu" do
+      = icon "bars"
+    %ul.navbar-toggle.show
       = nav_link_to t("paths.home"), home_path
       = nav_link_to t("paths.about"), about_path
       = nav_link_to t("paths.contact"), "/contact"
-    %ul.navbar-right
+    %ul.navbar-toggle.navbar-right.show
       = nav_link_to t("paths.users"), users_path
       - if user_signed_in?
         %li.more

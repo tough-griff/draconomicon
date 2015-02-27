@@ -1,7 +1,6 @@
 // Stolen from GitHub's CSS
 .tooltipped {
   $tooltip-background-color: transparentize(#000, .2);
-  $tooltip-font: normal normal 10px/1.5 $base-font-family;
   $tooltip-z-index: 99999;
 
   position: relative;
@@ -24,7 +23,7 @@
     color: #fff;
     content: attr(aria-label);
     display: none;
-    font: $tooltip-font;
+    font-size: 10px;
     -webkit-font-smoothing: subpixel-antialiased;
     line-height: 1.5;
     padding: 5px 8px;
@@ -114,22 +113,25 @@
 
   &-e,
   &-w {
+    &:before {
+      bottom: 50%;
+      top: 50%;
+    }
+
     &:after {
       @include transform(translateY(50%));
+      bottom: 50%;
     }
   }
 
   &-e {
     &:before {
       border-right-color: $tooltip-background-color;
-      bottom: 50%;
       margin-top: -5px;
       right: -5px;
-      top: 50%;
     }
 
     &:after {
-      bottom: 50%;
       left: 100%;
       margin-left: 5px;
     }
@@ -138,14 +140,11 @@
   &-w {
     &:before {
       border-left-color: $tooltip-background-color;
-      bottom: 50%;
       left: -5px;
       margin-top: -5px;
-      top: 50%;
     }
 
     &:after {
-      bottom: 50%;
       margin-right: 5px;
       right: 100%;
     }

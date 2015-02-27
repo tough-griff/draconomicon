@@ -14,23 +14,52 @@
     @include outer-container;
   }
 
-  ul {
-    float: left;
-    text-align: left;
+  .navbar-menu-button {
+    color: lighten($navbar-background-color, 40%);
+    display: block;
+    font-size: 32px;
+    padding-right: .5em;
+    text-align: right;
+    width: 100%;
 
-    &.navbar-right {
-      float: right;
-      text-align: right;
+    @include media($large-screen) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: lighten($navbar-background-color, 50%);
+    }
+  }
+
+  ul {
+    display: none;
+
+    @include media($large-screen) {
+      display: block;
+      float: left;
+
+      &.navbar-right {
+        float: right;
+      }
+    }
+
+    &.show {
+      display: block;
     }
 
     > li {
-      display: inline-block;
+      @include media($large-screen) {
+        display: inline-block;
+      }
 
       > a {
         color: #fff;
         display: inline-block;
         font-weight: bold;
         padding: .75em .5em;
+        text-align: right;
+        width: 100%;
 
         &:focus,
         &:hover {
@@ -48,9 +77,11 @@
     position: relative;
 
     > a {
-      &:focus,
-      &:hover {
-        background-color: $navbar-background-color;
+      @include media($large-screen) {
+        &:focus,
+        &:hover {
+          background-color: $navbar-background-color;
+        }
       }
 
       &:after {
@@ -67,16 +98,23 @@
 
   .submenu {
     display: none;
-    position: absolute;
-    top: $navbar-height;
+
+    @include media($large-screen) {
+      position: absolute;
+      top: $navbar-height;
+    }
 
     > li {
       display: block;
 
       > a {
         background-color: $navbar-background-color;
-        padding: .75em;
-        width: $navbar-submenu-width;
+
+        @include media($large-screen) {
+          padding: .75em;
+          text-align: left;
+          width: $navbar-submenu-width;
+        }
       }
 
       &:last-child > a {
