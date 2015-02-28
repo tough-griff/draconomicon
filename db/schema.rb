@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224200808) do
+ActiveRecord::Schema.define(version: 20150228210926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20150224200808) do
     t.string   "eyes"
     t.string   "skin"
     t.string   "hair"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150224200808) do
     t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50
     t.string   "scope"
-    t.datetime "created_at"
+    t.datetime "created_at",                null: false
   end
 
   add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
@@ -69,11 +69,11 @@ ActiveRecord::Schema.define(version: 20150224200808) do
     t.integer  "failed_attempts",                   default: 0,     null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name",                   limit: 32, default: "",    null: false
     t.string   "slug",                                              null: false
     t.boolean  "admin",                             default: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

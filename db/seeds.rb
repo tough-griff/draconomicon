@@ -16,7 +16,7 @@ if Rails.env == "development"
 
   39.times do |n|
     user = User.new do |u|
-      u.name = Faker::Internet.user_name
+      u.name = "#{Faker::Internet.user_name}-#{n}"
       u.email = "example-#{n + 1}@railstutorial.org"
       u.password = "password"
       u.password_confirmation = "password"

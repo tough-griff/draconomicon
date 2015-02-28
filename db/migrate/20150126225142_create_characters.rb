@@ -17,7 +17,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string     :skin
       t.string     :hair
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

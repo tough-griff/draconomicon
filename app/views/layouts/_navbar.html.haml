@@ -6,15 +6,15 @@
       = nav_link_to t("paths.home"), home_path
       = nav_link_to t("paths.about"), about_path
       = nav_link_to t("paths.contact"), "/contact"
-    %ul.navbar-toggle.navbar-right.show
-      = nav_link_to t("paths.users"), users_path
-      - if user_signed_in?
-        %li.more
-          = link_to current_user, "javascript:void(0)"
-          %ul.submenu
-            = nav_link_to t("paths.user"), current_user
-            = nav_link_to t("paths.edit_user_registration"), edit_user_registration_path
-            %li.separator
-            %li= link_to t("paths.destroy_user_session"), destroy_user_session_path, method: :delete
-      - else
-        = nav_link_to t("paths.new_user_session"), new_user_session_path
+      %ul.navbar-right
+        = nav_link_to t("paths.users"), users_path
+        - if user_signed_in?
+          %li.more
+            = link_to current_user, "javascript:void(0)"
+            %ul.submenu
+              = nav_link_to t("paths.user"), current_user
+              = nav_link_to t("paths.edit_user_registration"), edit_user_registration_path
+              %li.separator
+              %li= link_to t("paths.destroy_user_session"), destroy_user_session_path, method: :delete
+        - else
+          = nav_link_to t("paths.new_user_session"), new_user_session_path

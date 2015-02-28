@@ -5,7 +5,7 @@ class CreateFriendlyIdSlugs < ActiveRecord::Migration
       t.integer  :sluggable_id,   null: false
       t.string   :sluggable_type, limit: 50
       t.string   :scope
-      t.datetime :created_at
+      t.datetime :created_at,     null: false
     end
     add_index :friendly_id_slugs, :sluggable_id
     add_index :friendly_id_slugs, %i(slug sluggable_type)

@@ -20,11 +20,11 @@
 #  failed_attempts        :integer          default("0"), not null
 #  unlock_token           :string
 #  locked_at              :datetime
-#  created_at             :datetime
-#  updated_at             :datetime
 #  name                   :string(32)       default(""), not null
 #  slug                   :string           not null
 #  admin                  :boolean          default("false")
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
 #
 # Indexes
 #
