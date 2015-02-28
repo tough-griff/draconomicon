@@ -48,6 +48,7 @@ RSpec.describe Character do
   it { is_expected.to respond_to(:eyes) }
   it { is_expected.to respond_to(:skin) }
   it { is_expected.to respond_to(:hair) }
+  it { is_expected.to respond_to(:image_url) }
 
   it { is_expected.to belong_to(:user) }
   it { is_expected.to respond_to(:user) }
@@ -72,6 +73,7 @@ RSpec.describe Character do
     specify { expect(subject.character_level).to eq(12) }
   end
 
+  # Tests both #description and #to_s
   describe "#to_s" do
     before do
       subject.name = "Havel"
