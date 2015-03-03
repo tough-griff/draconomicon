@@ -17,5 +17,5 @@ notifications:
     on_success: change
     on_failure: always
 script:
-  - bundle exec rake db:schema:load
+  - bundle exec rake db:migrate
   - bundle exec rake spec
