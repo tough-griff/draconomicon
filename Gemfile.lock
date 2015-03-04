@@ -138,7 +138,6 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.9.3)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -147,7 +146,7 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
-    multi_json (1.10.1)
+    multi_json (1.11.0)
     neat (1.7.1)
       bourbon (>= 4.0)
       sass (>= 3.3)
@@ -156,6 +155,9 @@ GEM
       mini_portile (~> 0.6.0)
     normalize-rails (3.0.1)
     orm_adapter (0.5.0)
+    passenger (5.0.1)
+      rack
+      rake (>= 0.8.1)
     pg (0.18.1)
     poltergeist (1.6.0)
       capybara (~> 2.1)
@@ -201,7 +203,6 @@ GEM
       activesupport (= 4.2.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.13.0)
     rake (10.4.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -268,10 +269,6 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.8.3)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.1.0)
@@ -313,6 +310,7 @@ DEPENDENCIES
   neat
   newrelic_rpm
   normalize-rails
+  passenger
   pg
   poltergeist
   pry-rails
@@ -328,5 +326,4 @@ DEPENDENCIES
   title
   turbolinks
   uglifier
-  unicorn
   web-console
