@@ -4,5 +4,7 @@
 //= require turbolinks
 //= require turbolinks.progressBar
 //= require turbolinks.transitionCache
-//= require flashes
+//= require react
+//= require react_ujs
+//= require components
 //= require navbar

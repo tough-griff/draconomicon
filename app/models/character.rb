@@ -41,6 +41,7 @@ class Character < ActiveRecord::Base
   validates :name, presence: true
   validates :alignment, presence: true, inclusion: ALIGNMENTS
 
+  # Serialize class_levels column property to a hash
   serialize :class_levels, Hash
 
   # Returns the total of all a character's classes' levels.

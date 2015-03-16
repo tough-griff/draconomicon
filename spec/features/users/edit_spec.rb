@@ -23,7 +23,6 @@ RSpec.feature "Editing a user" do
                                        current_password: user.password)
     user.reload
 
-    expect(page).to have_selector("div.flash.notice", text: "confirm")
     expect(user.name).to eq("New Name")
     expect(user.email).not_to eq("new@example.com")
     expect(user.unconfirmed_email).to eq("new@example.com")

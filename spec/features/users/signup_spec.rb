@@ -14,7 +14,6 @@ RSpec.feature "Signing up" do
       fill_form_and_submit(:user, attributes_for(:user))
     end.to change(User, :count).by(1)
 
-    expect(page).to have_selector("div.flash.notice", text: "Welcome!")
     expect(page).to have_link("Sign out", href: destroy_user_session_path)
   end
 end

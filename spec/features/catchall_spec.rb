@@ -5,6 +5,5 @@ RSpec.feature "Catchall route" do
     visit "fake"
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_selector("div.flash.notice", text: "Sorry")
   end
 end

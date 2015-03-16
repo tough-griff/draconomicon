@@ -18,6 +18,7 @@ gem "normalize-rails"
 gem "passenger"
 gem "pg"
 gem "rack-timeout"
+gem "react-rails", "~> 1.0.0.pre", github: "reactjs/react-rails"
 gem "sass-rails"
 gem "simple_form"
 gem "title"
@@ -47,7 +48,7 @@ group :test do
   gem "database_cleaner", require: false
   gem "factory_girl_rails"
   gem "formulaic"
-  gem "poltergeist"
+  gem "poltergeist", require: false
   gem "shoulda-matchers", require: false
 end
 

@@ -6,4 +6,4 @@
     = render "layouts/navbar"
     .container
       = yield
-    = render "layouts/flashes"
+    = react_component "Flashes", flashes: flash
