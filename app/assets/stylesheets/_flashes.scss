@@ -20,7 +20,6 @@
     border-radius: $base-border-radius;
     display: block;
     margin-bottom: $small-spacing;
-    opacity: 0;
     padding: $small-spacing;
     text-align: center;
 
@@ -38,15 +37,6 @@
 
     &.success {
       @include flash($success-color);
-    }
-
-    &.fade-in {
-      @include animation(fadeInUp 500ms);
-      opacity: 1;
-    }
-
-    &.fade-out {
-      @include animation(fadeOutDown 500ms);
     }
 
     .flash-close {

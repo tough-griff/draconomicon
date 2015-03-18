@@ -18,7 +18,7 @@ if ENV["RAILS_ENV"] == "development"
 
     39.times do |n|
       user = User.new do |u|
-        u.name = "#{Faker::Internet.user_name}"
+        u.name = "#{FFaker::Internet.user_name}"
         u.email = "example-#{n + 1}@railstutorial.org"
         u.password = "password"
         u.password_confirmation = "password"
@@ -31,7 +31,7 @@ if ENV["RAILS_ENV"] == "development"
     users.each do |user|
       3.times do
         character = user.characters.build do |c|
-          c.name = Faker::Name.first_name
+          c.name = FFaker::Name.first_name
           c.class_levels = { CLASSES.sample => rand(1..20) }
           c.player_name = user.name
           c.race = RACES.sample

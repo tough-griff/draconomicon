@@ -1,42 +1,62 @@
+// TODO Move this into Draconomicon global namespace
+var DraconomiconFlashes = {};
+
 var Flashes = React.createClass({
   propTypes: {
     flashes: React.PropTypes.array
   },
 
-  render: function() {
-    return (
-      <div className="flashes" id="notifications">
-        {this.props.flashes.map(function(flash) {
-          return <Flash key={flash[0]} type={flash[0]} text={flash[1]} />;
-        }.bind(this))}
-      </div>
-    );
-  }
-});
-
-// FIXME the element is still present, albeit invisible
-var Flash = React.createClass({
-  propTypes: {
-    type: React.PropTypes.string,
-    text: React.PropTypes.string
-  },
-
   getInitialState: function() {
-    return { classes: "flash " + this.props.type + " fade-in" };
+    return { flashes: this.props.flashes };
   },
 
-  hide: function() {
-    this.setState({ classes: "flash " + this.props.type + " fade-out" })
+  // Bind add and remove actions the global DraconomiconFlashes object.
+  // This allows flashes to be presented and removed externally through
+  // javascript.
+  componentDidMount: function() {
+    DraconomiconFlashes.add = this.addFlash;
+    DraconomiconFlashes.remove = this.removeFlash;
+  },
+
+  // Remove add and remove actions from the global DraconomiconFlashes object.
+  componentWillUnmount: function() {
+    delete DraconomiconFlashes.add;
+    delete DraconomiconFlashes.remove;
+  },
+
+  addFlash: function(flash) {
+    var flashes = this.state.flashes.concat([flash]);
+    this.setState({ flashes: flashes });
+  },
+
+  removeFlash: function(i) {
+    var flashes = this.state.flashes;
+    flashes.splice(i, 1);
+    this.setState({ flashes: flashes });
   },
 
   render: function() {
+    var flashes = this.state.flashes.map(function(flash, i) {
+      var type = flash[0];
+      var text = flash[1];
+      var classes = 'flash ' + type;
+
+      return (
+        <div key={type} className={classes} role="alertdialog"
+          onClick={this.removeFlash.bind(this, i)}>
+          <span className="flash-close" role="button" aria-hidden="true">
+            &times;
+          </span>
+          {text}
+        </div>
+      );
+    }.bind(this));
+
     return (
-      <div className={this.state.classes} role="alertdialog" onClick={this.hide}>
-        <span className="flash-close" role="button" aria-hidden="true">
-          &times;
-        </span>
-        {this.props.text}
-      </div>
+      <React.addons.CSSTransitionGroup component="div" className="flashes"
+        transitionName="fade" transitionAppear={true}>
+        {flashes}
+      </React.addons.CSSTransitionGroup>
     );
   }
 });

@@ -6,7 +6,7 @@ gem "rails", "4.2.0"
 gem "animate-rails"
 gem "bourbon"
 gem "devise"
-gem "font-awesome-sass"
+gem "font-awesome-sass", "4.3.1"
 gem "friendly_id"
 gem "haml-rails"
 gem "jbuilder"
@@ -27,11 +27,12 @@ gem "uglifier"
 
 group :development do
   gem "annotate"
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "bitters", require: false
   gem "ffaker", require: false
   gem "spring-commands-rspec"
   gem "spring"
-  gem "web-console"
 end
 
 group :development, :test do
