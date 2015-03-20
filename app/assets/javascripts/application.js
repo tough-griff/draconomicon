@@ -6,5 +6,6 @@
 //= require turbolinks.transitionCache
 //= require react
 //= require react_ujs
-//= require components
-//= require navbar
+//= require_tree ./react_components
+//= require draconomicon
+//= require_tree .

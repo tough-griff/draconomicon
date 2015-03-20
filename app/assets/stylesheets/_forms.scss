@@ -10,21 +10,18 @@
   }
 
   &.connected {
-    > input {
-      margin-bottom: -1px;
-    }
-
     &.top > input {
       @include border-bottom-radius(0);
+      margin-bottom: -1px;
     }
 
     &.middle > input {
       border-radius: 0;
+      margin-bottom: -1px;
     }
 
     &.bottom > input {
       @include border-top-radius(0);
-      margin-bottom: $small-spacing;
     }
   }
 

@@ -40,7 +40,10 @@ module Draconomicon
     # see http://robots.thoughtbot.com/content-compression-with-rack-deflater
     config.middleware.use Rack::Deflater
 
-    # Enable react-rails addons
+    # Enable react-rails addons, --harmony flag
     config.react.addons = true
+    config.react.jsx_transform_options = {
+      harmony: true
+    }
   end
 end

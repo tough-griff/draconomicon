@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 ruby "2.2.0"
 
-gem "rails", "4.2.0"
+gem "rails", "4.2.1"
 
 gem "animate-rails"
 gem "bourbon"
 gem "devise"
-gem "font-awesome-sass", "4.3.1"
+gem "font-awesome-sass"
 gem "friendly_id"
 gem "haml-rails"
 gem "jbuilder"
