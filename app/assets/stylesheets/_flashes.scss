@@ -17,6 +17,7 @@
   z-index: 999;
 
   .flash {
+    @include flash(#eee);
     border-radius: $base-border-radius;
     display: block;
     margin-bottom: $small-spacing;

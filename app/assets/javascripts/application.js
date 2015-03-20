@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require lodash
 //= require turbolinks
 //= require turbolinks.progressBar
 //= require turbolinks.transitionCache
