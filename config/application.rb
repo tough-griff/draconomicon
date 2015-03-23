@@ -42,8 +42,5 @@ module Draconomicon
 
     # Enable react-rails addons, --harmony flag
     config.react.addons = true
-    config.react.jsx_transform_options = {
-      harmony: true
-    }
   end
 end

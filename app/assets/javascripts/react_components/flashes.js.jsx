@@ -10,13 +10,13 @@ var Flashes = React.createClass({
   componentDidMount: function() {
     // Bind event handlers for adding and removing flashes.
     // @see Draconomicon.Flashes
-    $(window).on('add.flash', (e, data) => {
+    $(window).on('add.flash', function(e, data) {
       this.addFlash(data.flashType, data.flashText);
-    });
+    }.bind(this));
 
-    $(window).on('remove.flash', (e, data) => {
+    $(window).on('remove.flash', function(e, data) {
       this.removeFlash(data.flashIndex);
-    });
+    }.bind(this));
   },
 
   componentWillUnmount: function() {
@@ -37,7 +37,7 @@ var Flashes = React.createClass({
   },
 
   render: function() {
-    var flashes = _.map(this.state.flashes, (flash, i) => {
+    var flashes = _.map(this.state.flashes, function(flash, i) {
       var type = flash[0];
       var text = flash[1];
       var classes = 'flash ' + type;
@@ -51,7 +51,7 @@ var Flashes = React.createClass({
           {text}
         </div>
       );
-    });
+    }.bind(this));
 
     return (
       <React.addons.CSSTransitionGroup component="div" className="flashes"
