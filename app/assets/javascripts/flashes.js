@@ -2,16 +2,16 @@
   'use strict';
 
   var DraconomiconFlashes = {
-    add: function(type, text) {
+    add: function(key, value) {
       $(window).trigger('add.flash', {
-        flashType: type,
-        flashText: text
+        flashKey: key,
+        flashText: value
       });
     },
 
-    remove: function(i) {
+    remove: function(key) {
       $(window).trigger('remove.flash', {
-        flashIndex: i
+        flashKey: key
       });
     }
   };

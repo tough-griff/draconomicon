@@ -7,6 +7,6 @@
 //= require turbolinks.transitionCache
 //= require react
 //= require react_ujs
-//= require_tree ./react_components
+//= require_tree ./react
 //= require draconomicon
 //= require_tree .

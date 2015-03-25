@@ -1,8 +1,9 @@
 var Flashes = React.createClass({
   propTypes: {
-    initialFlashes: React.PropTypes.array
+    initialFlashes: React.PropTypes.object
   },
 
+  // === Lifecycle Hooks ===
   getInitialState: function() {
     return { flashes: this.props.initialFlashes };
   },
@@ -11,11 +12,11 @@ var Flashes = React.createClass({
     // Bind event handlers for adding and removing flashes.
     // @see Draconomicon.Flashes
     $(window).on('add.flash', function(e, data) {
-      this.addFlash(data.flashType, data.flashText);
+      this.addFlash(data.flashKey, data.flashText);
     }.bind(this));
 
     $(window).on('remove.flash', function(e, data) {
-      this.removeFlash(data.flashIndex);
+      this.removeFlash(data.flashKey);
     }.bind(this));
   },
 
@@ -24,38 +25,31 @@ var Flashes = React.createClass({
     $(window).off('.flash');
   },
 
-  addFlash: function(type, text) {
-    var newFlash = [type, text];
-    var newFlashes = this.state.flashes.concat([newFlash]);
-    this.setState({ flashes: newFlashes });
-  },
-
-  removeFlash: function(i) {
+  // === Actions ===
+  addFlash: function(key, text) {
     var newFlashes = this.state.flashes;
-    newFlashes.splice(i, 1);
+    newFlashes[key] = text;
     this.setState({ flashes: newFlashes });
   },
 
-  render: function() {
-    var flashes = _.map(this.state.flashes, function(flash, i) {
-      var type = flash[0];
-      var text = flash[1];
-      var classes = 'flash ' + type;
+  removeFlash: function(key) {
+    var newFlashes = this.state.flashes;
+    delete newFlashes[key];
+    this.setState({ flashes: newFlashes });
+  },
 
+  // === Render ===
+  render: function() {
+    var flashes = _.map(this.state.flashes, function(text, key) {
       return (
-        <div key={i} className={classes} role="alertdialog"
-          onClick={this.removeFlash.bind(this, i)}>
-          <span className="flash-close" role="button" aria-hidden="true">
-            &times;
-          </span>
+        <Flash key={key} type={key} clickHandler={this.removeFlash.bind(this, key)}>
           {text}
-        </div>
+        </Flash>
       );
     }.bind(this));
 
     return (
-      <React.addons.CSSTransitionGroup component="div" className="flashes"
-        transitionName="fade" transitionAppear={true}>
+      <React.addons.CSSTransitionGroup component="div" className="flashes" transitionName="fade" transitionAppear={true}>
         {flashes}
       </React.addons.CSSTransitionGroup>
     );

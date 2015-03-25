@@ -22,7 +22,7 @@
     display: block;
     margin-bottom: $small-spacing;
     padding: $small-spacing;
-    text-align: center;
+    width: 20em;
 
     &.alert {
       @include flash($alert-color);
@@ -49,11 +49,8 @@
       opacity: .2;
       padding-right: 3px;
 
-      &:hover {
+      &:hover, &:focus {
         opacity: .5;
-      }
-
-      &:focus {
         outline: none;
       }
     }

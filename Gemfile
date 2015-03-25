@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.0"
+ruby "2.2.1"
 
 gem "rails", "4.2.1"
 
@@ -19,7 +19,7 @@ gem "normalize-rails"
 gem "passenger"
 gem "pg"
 gem "rack-timeout"
-gem "react-rails", "~> 1.0.0.pre", github: "reactjs/react-rails"
+gem "react-rails", github: "reactjs/react-rails"
 gem "sass-rails"
 gem "simple_form"
 gem "title"

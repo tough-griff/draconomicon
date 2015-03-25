@@ -6,4 +6,4 @@
     = render "layouts/navbar"
     .container
       = yield
-    = react_component "Flashes", initialFlashes: flash
+    = react_component "Flashes", initialFlashes: flash.to_hash

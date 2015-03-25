@@ -4,19 +4,9 @@
 .fade {
   &-appear, &-enter {
     @include animation(fadeIn .5s);
-    opacity: 0;
-
-    &-active {
-      opacity: 1;
-    }
   }
 
   &-leave {
     @include animation(fadeOut .5s);
-    opacity: 1;
-
-    &-active {
-      opacity: 0;
-    }
   }
 }
