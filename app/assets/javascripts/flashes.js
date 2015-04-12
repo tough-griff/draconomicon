@@ -1,4 +1,5 @@
-!function(Draconomicon) {
+// Attach the Flashes controller to the global namespace.
+(function(Draconomicon) {
   'use strict';
 
   var DraconomiconFlashes = {
@@ -17,4 +18,4 @@
   };
 
   Draconomicon.Flashes = DraconomiconFlashes;
-}(this.Draconomicon);
+})(this.Draconomicon);

@@ -1,6 +1,7 @@
 // Stolen from GitHub's CSS
 .tooltipped {
-  $tooltip-background-color: transparentize(#000, .2);
+  $tooltip-background-color: rgba(0, 0, 0, 0.8);
+  $tooltip-text-color: #fff;
   $tooltip-z-index: 99999;
 
   position: relative;
@@ -20,7 +21,7 @@
   &:after {
     background-color: $tooltip-background-color;
     border-radius: $base-border-radius;
-    color: #fff;
+    color: $tooltip-text-color;;
     content: attr(aria-label);
     display: none;
     font-size: 10px;

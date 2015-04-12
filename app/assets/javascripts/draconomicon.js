@@ -1,8 +1,12 @@
 // Provide a global namespace.
-!function(global) {
+(function(global) {
   'use strict';
 
-  var Draconomicon = {};
+  var Draconomicon = {
+    welcome: function() {
+      console.log('Welcome to The Draconomicon!');
+    }
+  };
 
   global.Draconomicon = Draconomicon;
-}(this);
+})(this);

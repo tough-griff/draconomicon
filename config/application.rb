@@ -40,7 +40,12 @@ module Draconomicon
     # see http://robots.thoughtbot.com/content-compression-with-rack-deflater
     config.middleware.use Rack::Deflater
 
-    # Enable react-rails addons, --harmony flag
+    # Allow rake notes to pick up annotations in scss and jsx files
+    config.annotations.register_extensions "scss", "jsx" do |annotation|
+      /\/\/\s*(#{annotation}):?\s*(.*)$/
+    end
+
+    # Enable react-rails addons
     config.react.addons = true
   end
 end

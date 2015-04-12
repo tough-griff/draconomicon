@@ -19,7 +19,7 @@ gem "normalize-rails"
 gem "passenger"
 gem "pg"
 gem "rack-timeout"
-gem "react-rails", github: "reactjs/react-rails"
+gem "react-rails"
 gem "sass-rails"
 gem "simple_form"
 gem "title"
@@ -39,7 +39,7 @@ end
 group :development, :test do
   gem "awesome_print"
   gem "bundler-audit", require: false
-  gem "byebug"
+  gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails"
 end

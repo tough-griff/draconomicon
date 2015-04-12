@@ -1,4 +1,10 @@
 var Flash = React.createClass({
+  propTypes: {
+    type: React.PropTypes.string.isRequired,
+    clickHandler: React.PropTypes.func.isRequired,
+    children: React.PropTypes.string.isRequired
+  },
+
   // === Render ===
   render: function() {
     var classes = 'flash ' + this.props.type;

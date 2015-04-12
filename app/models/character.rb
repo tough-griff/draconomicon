@@ -49,7 +49,7 @@ class Character < ActiveRecord::Base
     class_levels.values.reduce(:+)
   end
 
-  # @todo
+  # TODO allow image upload, store url in db
   # Return the URL of a character's avatar.
   def image_url
     "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"

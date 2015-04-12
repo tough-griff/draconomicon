@@ -1,13 +1,17 @@
 var Flashes = React.createClass({
   propTypes: {
-    initialFlashes: React.PropTypes.object
+    initialFlashes: React.PropTypes.objectOf(React.PropTypes.string)
   },
 
-  // === Lifecycle Hooks ===
   getInitialState: function() {
     return { flashes: this.props.initialFlashes };
   },
 
+  getDefaultProps: function() {
+    return { intialFlashes: {} };
+  },
+
+  // === Lifecycle Hooks ===
   componentDidMount: function() {
     // Bind event handlers for adding and removing flashes.
     // @see Draconomicon.Flashes
@@ -21,7 +25,7 @@ var Flashes = React.createClass({
   },
 
   componentWillUnmount: function() {
-    // Unbind event handlers from the flash namespace.
+    // Unbind event handlers from the .flash namespace.
     $(window).off('.flash');
   },
 

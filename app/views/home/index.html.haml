@@ -2,6 +2,8 @@
 %p= link_to t("paths.new_user_session"), new_user_session_path
 %p= link_to t("paths.new_user_registration"), new_user_registration_path, class: "sign-up"
 
+-# TODO remove flash testing button
+/ remove
 = link_to "javascript:void(0)", id: "test", class: "tooltipped tooltipped-s", "aria-label": "Testing!" do
   = icon "star"
 
@@ -9,3 +11,4 @@
   $('#test').on('click', function() {
     Draconomicon.Flashes.add('success', 'Hello world!');
   });
+/ /remove
