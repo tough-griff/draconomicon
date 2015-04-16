@@ -11,7 +11,7 @@ RSpec.describe ApplicationHelper do
       end
 
       it "handles a block" do
-        expect(self).to receive(:link_to).with("text", "url", nil) { "block content" };
+        expect(self).to receive(:link_to).with("text", "url", nil) { "block content" }
         nav_link_to("text", "url") { "block content" }
       end
     end

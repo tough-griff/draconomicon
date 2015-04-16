@@ -33,7 +33,7 @@ var Flashes = React.createClass({
   addFlash: function(key, text) {
     var newFlashes = _.clone(this.state.flashes);
 
-    // TODO pulse when adding a flash with an existing key.
+    // TODO: pulse when adding a flash with an existing key.
     if (newFlashes[key]) {
       console.warn("Flash '" + key + "' already exists.");
       return;

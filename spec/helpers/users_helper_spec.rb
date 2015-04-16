@@ -5,7 +5,7 @@ RSpec.describe UsersHelper do
 
   describe "#gravatar_for" do
     it "creates an image tag" do
-      expect(gravatar_for(user)).to match(/<img.*\/>/)
+      expect(gravatar_for(user)).to match(%r{<img.*\/>})
     end
 
     it "includes the correct alt text" do

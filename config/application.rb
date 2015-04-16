@@ -42,7 +42,7 @@ module Draconomicon
 
     # Allow rake notes to pick up annotations in scss and jsx files
     config.annotations.register_extensions "scss", "jsx" do |annotation|
-      /\/\/\s*(#{annotation}):?\s*(.*)$/
+      %r{\/\/\s*(#{annotation}):?\s*(.*)$}
     end
 
     # Enable react-rails addons
