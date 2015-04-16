@@ -1,8 +1,12 @@
 var Flash = React.createClass({
+  mixins: [React.PureRenderMixin],
+
   propTypes: {
     type: React.PropTypes.string.isRequired,
-    clickHandler: React.PropTypes.func.isRequired,
-    children: React.PropTypes.string.isRequired
+    children: React.PropTypes.string.isRequired,
+
+    // Callbacks
+    clickHandler: React.PropTypes.func.isRequired
   },
 
   // === Render ===

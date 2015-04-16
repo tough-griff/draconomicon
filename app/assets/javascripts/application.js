@@ -3,8 +3,7 @@
 //= require jquery_ujs
 //= require lodash
 //= require turbolinks
-//= require turbolinks.progressBar
-//= require turbolinks.transitionCache
+//= require turbolinks_config
 //= require react
 //= require react_ujs
 //= require_tree ./react

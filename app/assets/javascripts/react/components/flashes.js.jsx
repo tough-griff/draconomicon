@@ -4,11 +4,11 @@ var Flashes = React.createClass({
   },
 
   getInitialState: function() {
-    return { flashes: this.props.initialFlashes };
+    return { flashes: _.clone(this.props.initialFlashes) };
   },
 
   getDefaultProps: function() {
-    return { intialFlashes: {} };
+    return { initialFlashes: {} };
   },
 
   // === Lifecycle Hooks ===
@@ -31,13 +31,20 @@ var Flashes = React.createClass({
 
   // === Actions ===
   addFlash: function(key, text) {
-    var newFlashes = this.state.flashes;
+    var newFlashes = _.clone(this.state.flashes);
+
+    // TODO pulse when adding a flash with an existing key.
+    if (newFlashes[key]) {
+      console.warn("Flash '" + key + "' already exists.");
+      return;
+    }
+
     newFlashes[key] = text;
     this.setState({ flashes: newFlashes });
   },
 
   removeFlash: function(key) {
-    var newFlashes = this.state.flashes;
+    var newFlashes = _.clone(this.state.flashes);
     delete newFlashes[key];
     this.setState({ flashes: newFlashes });
   },

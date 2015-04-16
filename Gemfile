@@ -3,13 +3,11 @@ ruby "2.2.1"
 
 gem "rails", "4.2.1"
 
-gem "animate-rails"
 gem "bourbon"
 gem "devise"
 gem "font-awesome-sass"
 gem "friendly_id"
 gem "haml-rails"
-gem "jbuilder"
 gem "jquery-rails"
 gem "jquery-turbolinks"
 gem "kaminari"
