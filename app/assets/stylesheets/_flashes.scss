@@ -13,8 +13,11 @@
 }
 
 .flashes {
-  @include position(fixed, null 25px 25px null);
   z-index: 999;
+
+  @include media($medium-screen) {
+    @include position(fixed, null 15px 5px null);
+  }
 
   .flash {
     @include flash(#eee);
@@ -22,7 +25,10 @@
     display: block;
     margin-bottom: $small-spacing;
     padding: $small-spacing;
-    width: 20em;
+
+    @include media($medium-screen) {
+      width: 20em;
+    }
 
     &.alert {
       @include flash($alert-color);

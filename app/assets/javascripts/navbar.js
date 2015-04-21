@@ -1,3 +1,4 @@
+// Mobile-friendly navbar.
 $(document).ready(function() {
   var $toggle = $('.navbar-menu-button');
   var $toggleMe = $('.navbar-toggle').removeClass('show');

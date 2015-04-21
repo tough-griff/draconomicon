@@ -35,7 +35,7 @@ var Flashes = React.createClass({
 
     // TODO: pulse when adding a flash with an existing key.
     if (newFlashes[key]) {
-      console.warn("Flash '" + key + "' already exists.");
+      console.warn('Flash "' + key + '" already exists.');
       return;
     }
 

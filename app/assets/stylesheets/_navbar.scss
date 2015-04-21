@@ -22,7 +22,7 @@
     text-align: right;
     width: 100%;
 
-    @include media($large-screen) {
+    @include media($medium-screen) {
       display: none;
     }
 
@@ -36,7 +36,7 @@
     display: none;
     width: 100%;
 
-    @include media($large-screen) {
+    @include media($medium-screen) {
       display: block;
       float: left;
 
@@ -51,7 +51,7 @@
   }
 
   ul > li {
-    @include media($large-screen) {
+    @include media($medium-screen) {
       display: inline-block;
     }
 
@@ -78,7 +78,7 @@
     position: relative;
 
     > a {
-      @include media($large-screen) {
+      @include media($medium-screen) {
         &:focus,
         &:hover {
           background-color: $navbar-background-color;
@@ -100,7 +100,7 @@
   .submenu {
     display: none;
 
-    @include media($large-screen) {
+    @include media($medium-screen) {
       position: absolute;
       top: $navbar-height;
     }
@@ -111,7 +111,7 @@
       > a {
         background-color: $navbar-background-color;
 
-        @include media($large-screen) {
+        @include media($medium-screen) {
           padding: .75em;
           text-align: left;
           width: $navbar-submenu-width;

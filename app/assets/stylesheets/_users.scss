@@ -8,11 +8,19 @@
 }
 
 .user-info {
-  @include span-columns(3);
+  // TODO: mobile-first
+
+  @include media($medium-screen) {
+    @include span-columns(3);
+  }
 }
 
 .user-profile {
-  @include span-columns(9);
+  // TODO: mobile-first
+
+  @include media($medium-screen) {
+    @include span-columns(9);
+  }
 }
 
 .user-characters .character-card {
@@ -22,13 +30,21 @@
   $character-card-image-hover-background: lighten($character-card-image-background, 5%);
   $character-card-line-height: $base-line-height * 1em;
 
-  @include omega(3n);
-  @include span-columns(3 of 9);
+  @include shift(1);
+  @include span-columns(10);
   @include transition(all .2s ease-in-out);
   background-color: $character-card-background;
   border: 1px solid $base-border-color;
   border-radius: $base-border-radius;
   box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  margin-bottom: $base-spacing;
+
+  @include media($medium-screen) {
+    @include omega(3n);
+    @include shift(0);
+    @include span-columns(3 of 9);
+    margin-bottom: 0;
+  }
 
   .character-image {
     height: 150px;

@@ -17,7 +17,10 @@ var Flash = React.createClass({
         <span className="flash-close" role="button" aria-hidden="true">
           &times;
         </span>
-        {this.props.children}
+
+        <span className="flash-text">
+          {this.props.children}
+        </span>
       </div>
     );
   }

@@ -1,6 +1,9 @@
 .devise {
-  @include shift(3);
-  @include span-columns(6);
+  @include media($medium-screen) {
+    @include shift(3);
+    @include span-columns(6);
+    margin-top: 75px;
+  }
 
   .form-heading {
     font-size: $base-font-size * 1.5;
@@ -8,8 +11,15 @@
   }
 
   .form-actions {
-    @include shift(1 of 6);
-    @include span-columns(4 of 6);
+    @include shift(1);
+    @include span-columns(10);
+    margin-top: $base-spacing;
+
+
+    @include media($medium-screen) {
+      @include shift(1 of 6);
+      @include span-columns(4 of 6);
+    }
 
     .submit {
       @include fill-parent;
