@@ -1,6 +1,9 @@
 .form-group {
   $error-border-color: darken($error-color, 35%);
+  $error-text-color: #fff;
   $form-error-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($error-border-color, $lightness: -5%, $alpha: -.3);
+  $hint-border-color: $action-color;
+  $hint-text-color: #fff;
 
   &.connected,
   &.hide-label {
@@ -37,8 +40,8 @@
 
     > .hint {
       @include border-bottom-radius($base-border-radius);
-      background-color: $action-color;
-      color: #fff;
+      background-color: $hint-border-color;
+      color: $hint-text-color;
       display: block;
       margin-bottom: $small-spacing;
       padding: 0 ($base-spacing / 3);
@@ -71,7 +74,7 @@
     > .error {
       @include border-bottom-radius($base-border-radius);
       background-color: $error-border-color;
-      color: #fff;
+      color: $error-text-color;
       display: block;
       margin-bottom: $small-spacing;
       padding: 0 ($base-spacing / 3);

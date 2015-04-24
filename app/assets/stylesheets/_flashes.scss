@@ -13,6 +13,8 @@
 }
 
 .flashes {
+  $default-flash-color: #eee;
+
   z-index: 999;
 
   @include media($medium-screen) {
@@ -20,7 +22,7 @@
   }
 
   .flash {
-    @include flash(#eee);
+    @include flash($default-flash-color);
     border-radius: $base-border-radius;
     display: block;
     margin-bottom: $small-spacing;
@@ -55,7 +57,8 @@
       opacity: .2;
       padding-right: 3px;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         opacity: .5;
         outline: none;
       }

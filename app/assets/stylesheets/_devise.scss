@@ -2,6 +2,8 @@
   @include media($medium-screen) {
     @include shift(3);
     @include span-columns(6);
+    // FIXME: there must be a better way to do this?
+    margin-right: 25.53191%;
     margin-top: 75px;
   }
 
@@ -26,4 +28,8 @@
       margin-bottom: $small-spacing;
     }
   }
+}
+
+.delete-user {
+  // TODO: style the delete button
 }

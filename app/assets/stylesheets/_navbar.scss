@@ -5,6 +5,7 @@
   $navbar-height: 3em;
   $navbar-submenu-width: 12em;
   $navbar-submenu-separator-color: lighten($navbar-background-color, 10%);
+  $navbar-text-color: #fff;
 
   @include clearfix;
   background-color: $navbar-background-color;
@@ -56,7 +57,7 @@
     }
 
     > a {
-      color: #fff;
+      color: $navbar-text-color;
       display: inline-block;
       font-weight: bold;
       padding: .75em .5em;

@@ -1,3 +1,5 @@
 /* global Turbolinks */
 Turbolinks.enableProgressBar();
-Turbolinks.pagesCached(0); // Allows React components to function properly.
+
+// Allows React components to function properly.
+Turbolinks.pagesCached(0);

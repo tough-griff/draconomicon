@@ -1,12 +1,9 @@
 .container {
-  margin: $small-spacing $small-spacing 0;
-
-  @include media($medium-screen) {
-    @include outer-container;
-    padding: $small-spacing $small-spacing 0;
-  }
+  @include outer-container;
+  padding: $small-spacing;
 
   @include media($large-screen) {
+    margin-top: $small-spacing;
     padding: 0;
   }
 }

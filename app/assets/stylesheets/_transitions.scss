@@ -2,7 +2,8 @@
 
 // fade
 .fade {
-  &-appear, &-enter {
+  &-appear,
+  &-enter {
     @include transition(opacity .4s ease-in-out);
     opacity: 0;
 
