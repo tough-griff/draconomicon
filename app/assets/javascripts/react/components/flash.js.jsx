@@ -14,7 +14,7 @@ var Flash = React.createClass({
     var classes = 'flash ' + this.props.type;
     return (
       <div className={classes} role="alertdialog" onClick={this.props.clickHandler}>
-        <span className="flash-close" role="button" aria-hidden="true">
+        <span className="flash-close" role="button" aria-hidden={true}>
           &times;
         </span>
 
