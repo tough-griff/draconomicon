@@ -11,7 +11,7 @@
 #  player_name  :string
 #  race         :string
 #  alignment    :string           default("True Neutral"), not null
-#  experience   :integer          default("0")
+#  experience   :integer          default(0)
 #  age          :integer
 #  height       :string
 #  weight       :string
