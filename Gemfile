@@ -32,6 +32,11 @@ group :development do
   gem "ffaker", require: false
   gem "spring-commands-rspec"
   gem "spring"
+
+  # Code style and linting
+  gem "haml-lint", require: false
+  gem "rubocop", require: false
+  gem "scss-lint", require: false
 end
 
 group :development, :test do
