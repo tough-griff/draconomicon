@@ -4,6 +4,7 @@ ruby "2.2.2"
 gem "rails", "4.2.1"
 
 gem "airbrake"
+gem "active_link_to"
 gem "bourbon"
 gem "devise"
 gem "font-awesome-sass"
