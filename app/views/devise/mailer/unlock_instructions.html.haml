@@ -1,0 +1,4 @@
+%p= t(".greeting", name: @resource.name)
+%p= t(".info")
+%p= t(".instructions")
+%p= link_to t(".link"), unlock_url(@resource, unlock_token: @token)
