@@ -1,2 +1,5 @@
 %li.user
-  = link_to user.name, user
+  = gravatar_for(user)
+  = link_to user.name, user, class: "name"
+  - if user.admin?
+    %span.admin-tag Admin
