@@ -32,16 +32,22 @@
 #                          DELETE /users/:user_id/characters/:id(.:format)      characters#destroy
 #                    users GET    /users(.:format)                              users#index
 #                     user GET    /users/:id(.:format)                          users#show
+#              sidekiq_web        /sidekiq                                      Sidekiq::Web
 #                     root GET    /                                             home#index
 #                     home GET    /home(.:format)                               home#index
 #                    about GET    /about(.:format)                              home#about
 #                          GET    /*path(.:format)                              application#catchall
 #
 
+require "sidekiq/web"
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: %i(index show) do
     resources :characters
+  end
+
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => "/sidekiq"
   end
 
   root to: "home#index"
