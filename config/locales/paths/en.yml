@@ -15,6 +15,7 @@ en:
     users: "Users"
     user: "Profile"
     sidekiq_web: "Sidekiq Console"
+    pg_hero: "Database Insights"
     root: "Home"
     home: "Home"
     about: "About"

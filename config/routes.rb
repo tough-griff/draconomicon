@@ -33,6 +33,7 @@
 #                    users GET    /users(.:format)                              users#index
 #                     user GET    /users/:id(.:format)                          users#show
 #              sidekiq_web        /sidekiq                                      Sidekiq::Web
+#                  pg_hero        /pghero                                       PgHero::Engine
 #                     root GET    /                                             home#index
 #                     home GET    /home(.:format)                               home#index
 #                    about GET    /about(.:format)                              home#about
@@ -47,7 +48,8 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(user) { user.admin? } do
-    mount Sidekiq::Web => "/sidekiq"
+    mount Sidekiq::Web, at: "/sidekiq"
+    mount PgHero::Engine, at: "pghero"
   end
 
   root to: "home#index"
