@@ -6,6 +6,6 @@
 //= require turbolinks_config
 //= require react
 //= require react_ujs
-//= require_tree ./react
+//= require components
 //= require draconomicon
 //= require_tree .

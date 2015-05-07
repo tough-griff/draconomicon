@@ -3,15 +3,15 @@ var Flashes = React.createClass({
     initialFlashes: React.PropTypes.objectOf(React.PropTypes.string)
   },
 
-  getInitialState: function() {
-    return { flashes: _.clone(this.props.initialFlashes) };
-  },
-
+  // === Lifecycle Hooks ===
   getDefaultProps: function() {
     return { initialFlashes: {} };
   },
 
-  // === Lifecycle Hooks ===
+  getInitialState: function() {
+    return { flashes: _.clone(this.props.initialFlashes) };
+  },
+
   componentDidMount: function() {
     // Bind event handlers for adding and removing flashes.
     // @see Draconomicon.Flashes
