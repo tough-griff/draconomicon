@@ -14,6 +14,7 @@ en:
     user_character: "Character sheet"
     users: "Users"
     user: "Profile"
+    sidekiq_web: "Sidekiq Console"
     root: "Home"
     home: "Home"
     about: "About"
