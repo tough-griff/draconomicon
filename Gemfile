@@ -42,7 +42,7 @@ group :development do
   # Code style and linting
   gem "haml-lint", require: false
   gem "rubocop", require: false
-  gem "scss-lint", require: false
+  gem "scss_lint", require: false
 end
 
 group :development, :test do
