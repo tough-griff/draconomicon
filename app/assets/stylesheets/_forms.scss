@@ -5,6 +5,14 @@
   $hint-border-color: $action-color;
   $hint-text-color: #fff;
 
+  > input {
+    position: relative;
+
+    &:focus {
+      z-index: 2;
+    }
+  }
+
   &.connected,
   &.hide-label {
     > label {

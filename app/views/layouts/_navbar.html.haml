@@ -4,7 +4,7 @@
     = link_to "javascript:void(0)", class: "navbar-menu-button", "aria-label": "Toggle Menu" do
       = icon "bars"
     %ul.navbar-toggle.show
-      = active_link_to t("paths.home"), home_path, wrap_tag: :li
+      = active_link_to t("paths.home"), home_path, wrap_tag: :li, active: [['home'], ['index']]
       = active_link_to t("paths.about"), about_path, wrap_tag: :li
       = active_link_to t("paths.contact"), "/contact", wrap_tag: :li
       %ul.navbar-right
