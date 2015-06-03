@@ -6,6 +6,7 @@
   $hint-text-color: #fff;
 
   > input {
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s, z-index ease-in-out .15s);
     position: relative;
 
     &:focus {
