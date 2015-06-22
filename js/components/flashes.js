@@ -1,18 +1,20 @@
-var Flashes = React.createClass({
+const React = require('react');
+
+const Flashes = React.createClass({
   propTypes: {
     initialFlashes: React.PropTypes.objectOf(React.PropTypes.string)
   },
 
   // === Lifecycle Hooks ===
-  getDefaultProps: function() {
+  getDefaultProps() {
     return { initialFlashes: {} };
   },
 
-  getInitialState: function() {
+  getInitialState() {
     return { flashes: _.clone(this.props.initialFlashes) };
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     // Bind event handlers for adding and removing flashes.
     // @see Draconomicon.Flashes
     $(window).on('add.flash', function(e, data) {
@@ -24,13 +26,13 @@ var Flashes = React.createClass({
     }.bind(this));
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     // Unbind event handlers from the .flash namespace.
     $(window).off('.flash');
   },
 
   // === Actions ===
-  addFlash: function(key, text) {
+  addFlash(key, text) {
     var newFlashes = _.clone(this.state.flashes);
 
     // TODO: pulse when adding a flash with an existing key.
@@ -43,14 +45,14 @@ var Flashes = React.createClass({
     this.setState({ flashes: newFlashes });
   },
 
-  removeFlash: function(key) {
+  removeFlash(key) {
     var newFlashes = _.clone(this.state.flashes);
     delete newFlashes[key];
     this.setState({ flashes: newFlashes });
   },
 
   // === Render ===
-  render: function() {
+  render() {
     var flashes = _.map(this.state.flashes, function(text, key) {
       return (
         <Flash key={key} type={key} clickHandler={this.removeFlash.bind(this, key)}>

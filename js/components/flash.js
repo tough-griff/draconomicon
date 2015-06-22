@@ -1,4 +1,6 @@
-var Flash = React.createClass({
+const React = require('react');
+
+const Flash = React.createClass({
   mixins: [React.PureRenderMixin],
 
   propTypes: {
@@ -10,8 +12,8 @@ var Flash = React.createClass({
   },
 
   // === Render ===
-  render: function() {
-    var classes = 'flash ' + this.props.type;
+  render() {
+    const classes = 'flash ' + this.props.type;
     return (
       <div className={classes} role="alertdialog" onClick={this.props.clickHandler}>
         <span className="flash-close" role="button" aria-hidden={true}>
@@ -25,3 +27,5 @@ var Flash = React.createClass({
     );
   }
 });
+
+module.exports = Flash;

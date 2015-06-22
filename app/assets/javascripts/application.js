@@ -1,11 +1,6 @@
 //= require jquery2
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require lodash
 //= require turbolinks
 //= require turbolinks_config
-//= require react
-//= require react_ujs
-//= require components
-//= require draconomicon
-//= require_tree .
+//= require webpack-bundle
