@@ -5,7 +5,7 @@ var config = module.exports = {
   // The base path which will be used to resolve entry points.
   context: __dirname,
   // The main entry point for our application's frontend JS.
-  entry: './js/entry.js',
+  entry: './js/_entry.js',
 
   output: {
     // This is our app/assets/javascripts directory, which is part of the
@@ -13,7 +13,7 @@ var config = module.exports = {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     // The filename of the compiled bundle,
     // e.g. app/assets/javascripts/webpack-bundle.js.
-    filename: 'webpack-bundle.js',
+    filename: 'bundle.js',
     // If the webpack code-splitting feature is enabled, this is the path it'll
     //  use to download bundles.
     publicPath: '/webpack-assets'
@@ -30,7 +30,14 @@ var config = module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          optional: ['runtime']
+        }
+      }
     ]
   }
 };

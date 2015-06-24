@@ -42,9 +42,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!*********************!*\
-  !*** ./js/entry.js ***!
-  \*********************/
+/*!**********************!*\
+  !*** ./js/_entry.js ***!
+  \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32326,14 +32326,14 @@
   \*********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Flash"] = __webpack_require__(/*! -!./~/babel-loader!./js/components/flash.jsx */ 179);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Flash"] = __webpack_require__(/*! -!./~/babel-loader?{"optional":["runtime"]}!./js/components/flash.jsx */ 179);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 179 */
-/*!**************************************************!*\
-  !*** ./~/babel-loader!./js/components/flash.jsx ***!
-  \**************************************************/
+/*!***************************************************************************!*\
+  !*** ./~/babel-loader?{"optional":["runtime"]}!./js/components/flash.jsx ***!
+  \***************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32382,14 +32382,14 @@
   \*************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Flashes"] = __webpack_require__(/*! -!./~/babel-loader!./js/components/flashes.jsx */ 181);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Flashes"] = __webpack_require__(/*! -!./~/babel-loader?{"optional":["runtime"]}!./js/components/flashes.jsx */ 181);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 181 */
-/*!****************************************************!*\
-  !*** ./~/babel-loader!./js/components/flashes.jsx ***!
-  \****************************************************/
+/*!*****************************************************************************!*\
+  !*** ./~/babel-loader?{"optional":["runtime"]}!./js/components/flashes.jsx ***!
+  \*****************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44741,14 +44741,14 @@
   \***********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Draconomicon"] = __webpack_require__(/*! -!./~/babel-loader!./js/draconomicon.js */ 185);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Draconomicon"] = __webpack_require__(/*! -!./~/babel-loader?{"optional":["runtime"]}!./js/draconomicon.js */ 185);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 185 */
-/*!*********************************************!*\
-  !*** ./~/babel-loader!./js/draconomicon.js ***!
-  \*********************************************/
+/*!**********************************************************************!*\
+  !*** ./~/babel-loader?{"optional":["runtime"]}!./js/draconomicon.js ***!
+  \**********************************************************************/
 /***/ function(module, exports) {
 
 	// Provide a global namespace to attach modules.
@@ -44814,4 +44814,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=webpack-bundle.js.map
+//# sourceMappingURL=bundle.js.map
