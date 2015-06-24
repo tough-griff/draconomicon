@@ -5,5 +5,14 @@
   %body
     = render "layouts/navbar"
     .container
-      = react_component "Flashes", initialFlashes: flash.to_hash
+      #react-flashes
       = yield
+
+    :javascript
+      React.render(
+        React.createElement(
+          Flashes,
+          { initialFlashes: #{flash.to_hash.to_json} }
+        ),
+        $('#react-flashes')[0]
+      );

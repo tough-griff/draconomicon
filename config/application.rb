@@ -39,8 +39,5 @@ module Draconomicon
     # Use Rack::Deflater middleware to compress HTML/JSON responses.
     # see http://robots.thoughtbot.com/content-compression-with-rack-deflater
     config.middleware.use Rack::Deflater
-
-    # Enable react-rails addons
-    config.react.addons = true
   end
 end

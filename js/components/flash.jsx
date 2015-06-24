@@ -1,4 +1,4 @@
-const React = require('react');
+const React = require('react/addons');
 
 const Flash = React.createClass({
   mixins: [React.PureRenderMixin],

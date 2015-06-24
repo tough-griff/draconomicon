@@ -23,14 +23,14 @@ var config = module.exports = {
     // Tell webpack which extensions to auto search when it resolves modules. With
     //  this, you'll be able to do `require('./utils')` instead of
     // `require('./utils.js')`.
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.jsx'],
     // By default, webpack will search in `web_modules` and `node_modules`.
     modulesDirectories: ['node_modules']
   },
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
     ]
   }
 };

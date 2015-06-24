@@ -42,9 +42,6 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = { address: "localhost", port: 1025 }
   config.action_mailer.raise_delivery_errors = true
 
-  # react-rails
-  config.react.variant = :development
-
   # Allow rake notes to pick up annotations in scss and jsx files
   config.annotations.register_extensions "scss", "jsx" do |annotation|
     %r{\/\/\s*(#{annotation}):?\s*(.*)$}

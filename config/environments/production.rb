@@ -89,7 +89,4 @@ Rails.application.configure do
     domain: "draconomiconapp.herokuapp.com",
     enable_starttls_auto: true
   }
-
-  # react-rails
-  config.react.variant = :production
 end

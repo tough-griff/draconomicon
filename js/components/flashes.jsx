@@ -1,4 +1,5 @@
-const React = require('react');
+const React = require('react/addons');
+const _ = require('lodash');
 
 const Flashes = React.createClass({
   propTypes: {
@@ -68,3 +69,5 @@ const Flashes = React.createClass({
     );
   }
 });
+
+module.exports = Flashes;

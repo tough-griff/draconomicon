@@ -1,3 +1,5 @@
+const $ = require('jquery');
+
 // Mobile-friendly navbar.
 $(document).ready(function() {
   var $toggle = $('.navbar-menu-button');
