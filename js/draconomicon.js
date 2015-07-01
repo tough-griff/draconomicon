@@ -1,6 +1,8 @@
 // Provide a global namespace to attach modules.
-module.exports = {
+const Draconomicon = {
   welcome() {
-    console.log('Welcome to The Draconomicon!')
+    console.log('Welcome to The Draconomicon!');
   }
 };
+
+export default Draconomicon;

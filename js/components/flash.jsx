@@ -1,8 +1,6 @@
 const React = require('react/addons');
 
 const Flash = React.createClass({
-  mixins: [React.PureRenderMixin],
-
   propTypes: {
     type: React.PropTypes.string.isRequired,
     children: React.PropTypes.string.isRequired,
@@ -10,6 +8,8 @@ const Flash = React.createClass({
     // Callbacks
     clickHandler: React.PropTypes.func.isRequired
   },
+
+  mixins: [React.PureRenderMixin],
 
   // === Render ===
   render() {

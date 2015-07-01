@@ -7,7 +7,11 @@ module.exports = {
 
   // The main entry point(s) for our application's frontend JS.
   entry: {
-    app: './js/_app.js'
+    app: [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+      './js/_app.js'
+    ]
   },
 
   output: {
@@ -19,22 +23,18 @@ module.exports = {
     // e.g. app/assets/javascripts/app_bundle.js.
     filename: '[name].bundle.js',
     // Path used by webpack-dev-server.
-    publicPath: '/javascripts/'
+    publicPath: 'http://localhost:8080/assets/'
   },
 
   module: {
     loaders: [
       // babel-loader
       {
-        loader: 'babel',
+        loaders: ['react-hot', 'babel'],
         // Run babel on every .js and .jsx file.
         test: /\.jsx?$/,
         // Exclude any libraries from npm or bower.
-        exclude: /node_modules/,
-        // The babel-runtime module prevents injecting helpers into each file.
-        query: {
-          optional: ['runtime']
-        }
+        exclude: /node_modules/
       }
     ]
   },
@@ -46,5 +46,10 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     // By default, webpack will search in `web_modules` and `node_modules`.
     modulesDirectories: ['node_modules']
-  }
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ]
 };

@@ -1,6 +1,8 @@
-const React = require('react/addons');
 const _ = require('lodash');
+const $ = require('jquery');
+const React = require('react/addons');
 
+const Flash = require('./flash');
 const Flashes = React.createClass({
   propTypes: {
     initialFlashes: React.PropTypes.objectOf(React.PropTypes.string)
@@ -18,13 +20,13 @@ const Flashes = React.createClass({
   componentDidMount() {
     // Bind event handlers for adding and removing flashes.
     // @see Draconomicon.Flashes
-    $(window).on('add.flash', function(e, data) {
+    $(window).on('add.flash', (e, data) => {
       this.addFlash(data.flashKey, data.flashText);
-    }.bind(this));
+    });
 
-    $(window).on('remove.flash', function(e, data) {
+    $(window).on('remove.flash', (e, data) => {
       this.removeFlash(data.flashKey);
-    }.bind(this));
+    });
   },
 
   componentWillUnmount() {
@@ -32,29 +34,9 @@ const Flashes = React.createClass({
     $(window).off('.flash');
   },
 
-  // === Actions ===
-  addFlash(key, text) {
-    var newFlashes = _.clone(this.state.flashes);
-
-    // TODO: pulse when adding a flash with an existing key.
-    if (newFlashes[key]) {
-      console.warn('Flash "' + key + '" already exists.');
-      return;
-    }
-
-    newFlashes[key] = text;
-    this.setState({ flashes: newFlashes });
-  },
-
-  removeFlash(key) {
-    var newFlashes = _.clone(this.state.flashes);
-    delete newFlashes[key];
-    this.setState({ flashes: newFlashes });
-  },
-
   // === Render ===
   render() {
-    var flashes = _.map(this.state.flashes, function(text, key) {
+    const flashes = _.map(this.state.flashes, (text, key) => {
       return (
         <Flash key={key} type={key} clickHandler={this.removeFlash.bind(this, key)}>
           {text}
@@ -67,6 +49,26 @@ const Flashes = React.createClass({
         {flashes}
       </React.addons.CSSTransitionGroup>
     );
+  },
+
+  // === Actions ===
+  addFlash(key, text) {
+    const newFlashes = _.clone(this.state.flashes);
+
+    // TODO: pulse when adding a flash with an existing key.
+    if (newFlashes[key]) {
+      console.warn('Flash "' + key + '" already exists.');
+      return;
+    }
+
+    newFlashes[key] = text;
+    this.setState({ flashes: newFlashes });
+  },
+
+  removeFlash(key) {
+    const newFlashes = _.clone(this.state.flashes);
+    delete newFlashes[key];
+    this.setState({ flashes: newFlashes });
   }
 });
 

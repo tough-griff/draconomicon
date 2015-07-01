@@ -26,7 +26,7 @@ Rails.application.configure do
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  # config.assets.digest = true
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
@@ -34,7 +34,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
+  config.action_view.raise_on_missing_translations = true
 
   # ActionMailer
   config.action_mailer.default_url_options = { host: "localhost:#{ENV['PORT'] || 3000}" }
@@ -45,5 +45,9 @@ Rails.application.configure do
   # Allow rake notes to pick up annotations in scss and jsx files
   config.annotations.register_extensions "scss", "jsx" do |annotation|
     %r{\/\/\s*(#{annotation}):?\s*(.*)$}
+  end
+
+  config.action_controller.asset_host = Proc.new do |source|
+    "http://localhost:8080" if source.ends_with?("bundle.js")
   end
 end
