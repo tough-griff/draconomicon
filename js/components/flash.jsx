@@ -1,4 +1,4 @@
-const React = require('react/addons');
+import React from 'react/addons';
 
 const Flash = React.createClass({
   propTypes: {
@@ -28,4 +28,4 @@ const Flash = React.createClass({
   }
 });
 
-module.exports = Flash;
+export default Flash;

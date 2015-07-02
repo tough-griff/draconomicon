@@ -1,8 +1,8 @@
-const _ = require('lodash');
-const $ = require('jquery');
-const React = require('react/addons');
+import _ from 'lodash';
+import $ from 'jquery';
+import React from 'react/addons';
 
-const Flash = require('./flash');
+import Flash from './flash';
 const Flashes = React.createClass({
   propTypes: {
     initialFlashes: React.PropTypes.objectOf(React.PropTypes.string)
@@ -72,4 +72,4 @@ const Flashes = React.createClass({
   }
 });
 
-module.exports = Flashes;
+export default Flashes;

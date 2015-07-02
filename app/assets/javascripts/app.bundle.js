@@ -46,20 +46,55 @@
 
 	'use strict';
 
-	var $ = window.$ = __webpack_require__(1);
+	var _interopRequireDefault = __webpack_require__(1)['default'];
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _Draconomicon = __webpack_require__(3);
+
+	var _Draconomicon2 = _interopRequireDefault(_Draconomicon);
+
+	var _DraconomiconFlashes = __webpack_require__(4);
+
+	var _DraconomiconFlashes2 = _interopRequireDefault(_DraconomiconFlashes);
+
+	var _DraconomiconNavbar = __webpack_require__(183);
+
+	var _DraconomiconNavbar2 = _interopRequireDefault(_DraconomiconNavbar);
 
 	// Create a global namespace `Draconomicon`.
-	var Draconomicon = window.Draconomicon = __webpack_require__(2);
+	window.Draconomicon = _Draconomicon2['default'];
 	// Attach modules onto the Draconomicon namespace.
-	Draconomicon.Flashes = __webpack_require__(3);
-	__webpack_require__(183);
+	_Draconomicon2['default'].Flashes = _DraconomiconFlashes2['default'];
+	_Draconomicon2['default'].Navbar = _DraconomiconNavbar2['default'];
 
-	$(document).ready(function () {
-	  Draconomicon.welcome();
+	// Bind jQuery to the global scope.
+	window.$ = _jquery2['default'];
+
+	(0, _jquery2['default'])(document).ready(function () {
+	  _Draconomicon2['default'].welcome();
+	  _Draconomicon2['default'].Flashes.init();
+	  _Draconomicon2['default'].Navbar.init();
 	});
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports["default"] = function (obj) {
+	  return obj && obj.__esModule ? obj : {
+	    "default": obj
+	  };
+	};
+
+	exports.__esModule = true;
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9275,7 +9310,7 @@
 
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	// Provide a global namespace to attach modules.
@@ -9294,18 +9329,18 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(4)['default'];
+	var _interopRequireDefault = __webpack_require__(1)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _jquery = __webpack_require__(1);
+	var _jquery = __webpack_require__(2);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -9313,19 +9348,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	// Mount Flashes component.
-
 	var _componentsFlashes = __webpack_require__(161);
 
 	var _componentsFlashes2 = _interopRequireDefault(_componentsFlashes);
 
-	(0, _jquery2['default'])(document).ready(function () {
-	  _react2['default'].render(_react2['default'].createElement(_componentsFlashes2['default'], {
-	    initialFlashes: JSON.parse((0, _jquery2['default'])('meta[name="drac:flashes"]').attr('content'))
-	  }), (0, _jquery2['default'])('#react-flashes')[0]);
-	});
-
 	var DraconomiconFlashes = {
+	  init: function init() {
+	    _react2['default'].render(_react2['default'].createElement(_componentsFlashes2['default'], {
+	      initialFlashes: JSON.parse((0, _jquery2['default'])('meta[name="drac:flashes"]').attr('content'))
+	    }), (0, _jquery2['default'])('#react-flashes')[0]);
+	  },
+
 	  add: function add(key, value) {
 	    (0, _jquery2['default'])(window).trigger('add.flash', {
 	      flashKey: key,
@@ -9342,20 +9375,6 @@
 
 	exports['default'] = DraconomiconFlashes;
 	module.exports = exports['default'];
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	exports["default"] = function (obj) {
-	  return obj && obj.__esModule ? obj : {
-	    "default": obj
-	  };
-	};
-
-	exports.__esModule = true;
 
 /***/ },
 /* 5 */
@@ -29738,16 +29757,33 @@
 
 	'use strict';
 
-	var _ = __webpack_require__(162);
-	var $ = __webpack_require__(1);
-	var React = __webpack_require__(164);
+	var _interopRequireDefault = __webpack_require__(1)['default'];
 
-	var Flash = __webpack_require__(182);
-	var Flashes = React.createClass({
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _lodash = __webpack_require__(162);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _reactAddons = __webpack_require__(164);
+
+	var _reactAddons2 = _interopRequireDefault(_reactAddons);
+
+	var _flash = __webpack_require__(182);
+
+	var _flash2 = _interopRequireDefault(_flash);
+
+	var Flashes = _reactAddons2['default'].createClass({
 	  displayName: 'Flashes',
 
 	  propTypes: {
-	    initialFlashes: React.PropTypes.objectOf(React.PropTypes.string)
+	    initialFlashes: _reactAddons2['default'].PropTypes.objectOf(_reactAddons2['default'].PropTypes.string)
 	  },
 
 	  // === Lifecycle Hooks ===
@@ -29756,7 +29792,7 @@
 	  },
 
 	  getInitialState: function getInitialState() {
-	    return { flashes: _.clone(this.props.initialFlashes) };
+	    return { flashes: _lodash2['default'].clone(this.props.initialFlashes) };
 	  },
 
 	  componentDidMount: function componentDidMount() {
@@ -29764,34 +29800,34 @@
 
 	    // Bind event handlers for adding and removing flashes.
 	    // @see Draconomicon.Flashes
-	    $(window).on('add.flash', function (e, data) {
+	    (0, _jquery2['default'])(window).on('add.flash', function (e, data) {
 	      _this.addFlash(data.flashKey, data.flashText);
 	    });
 
-	    $(window).on('remove.flash', function (e, data) {
+	    (0, _jquery2['default'])(window).on('remove.flash', function (e, data) {
 	      _this.removeFlash(data.flashKey);
 	    });
 	  },
 
 	  componentWillUnmount: function componentWillUnmount() {
 	    // Unbind event handlers from the .flash namespace.
-	    $(window).off('.flash');
+	    (0, _jquery2['default'])(window).off('.flash');
 	  },
 
 	  // === Render ===
 	  render: function render() {
 	    var _this2 = this;
 
-	    var flashes = _.map(this.state.flashes, (function (text, key) {
-	      return React.createElement(
-	        Flash,
+	    var flashes = _lodash2['default'].map(this.state.flashes, (function (text, key) {
+	      return _reactAddons2['default'].createElement(
+	        _flash2['default'],
 	        { key: key, type: key, clickHandler: _this2.removeFlash.bind(_this2, key) },
 	        text
 	      );
 	    }).bind(this));
 
-	    return React.createElement(
-	      React.addons.CSSTransitionGroup,
+	    return _reactAddons2['default'].createElement(
+	      _reactAddons2['default'].addons.CSSTransitionGroup,
 	      { component: 'div', className: 'flashes', transitionName: 'fade', transitionAppear: true },
 	      flashes
 	    );
@@ -29799,7 +29835,7 @@
 
 	  // === Actions ===
 	  addFlash: function addFlash(key, text) {
-	    var newFlashes = _.clone(this.state.flashes);
+	    var newFlashes = _lodash2['default'].clone(this.state.flashes);
 
 	    // TODO: pulse when adding a flash with an existing key.
 	    if (newFlashes[key]) {
@@ -29812,13 +29848,14 @@
 	  },
 
 	  removeFlash: function removeFlash(key) {
-	    var newFlashes = _.clone(this.state.flashes);
+	    var newFlashes = _lodash2['default'].clone(this.state.flashes);
 	    delete newFlashes[key];
 	    this.setState({ flashes: newFlashes });
 	  }
 	});
 
-	module.exports = Flashes;
+	exports['default'] = Flashes;
+	module.exports = exports['default'];
 
 /***/ },
 /* 162 */
@@ -44321,33 +44358,41 @@
 
 	'use strict';
 
-	var React = __webpack_require__(164);
+	var _interopRequireDefault = __webpack_require__(1)['default'];
 
-	var Flash = React.createClass({
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _reactAddons = __webpack_require__(164);
+
+	var _reactAddons2 = _interopRequireDefault(_reactAddons);
+
+	var Flash = _reactAddons2['default'].createClass({
 	  displayName: 'Flash',
 
 	  propTypes: {
-	    type: React.PropTypes.string.isRequired,
-	    children: React.PropTypes.string.isRequired,
+	    type: _reactAddons2['default'].PropTypes.string.isRequired,
+	    children: _reactAddons2['default'].PropTypes.string.isRequired,
 
 	    // Callbacks
-	    clickHandler: React.PropTypes.func.isRequired
+	    clickHandler: _reactAddons2['default'].PropTypes.func.isRequired
 	  },
 
-	  mixins: [React.PureRenderMixin],
+	  mixins: [_reactAddons2['default'].PureRenderMixin],
 
 	  // === Render ===
 	  render: function render() {
 	    var classes = 'flash ' + this.props.type;
-	    return React.createElement(
+	    return _reactAddons2['default'].createElement(
 	      'div',
 	      { className: classes, role: 'alertdialog', onClick: this.props.clickHandler },
-	      React.createElement(
+	      _reactAddons2['default'].createElement(
 	        'span',
 	        { className: 'flash-close', role: 'button', 'aria-hidden': true },
 	        '×'
 	      ),
-	      React.createElement(
+	      _reactAddons2['default'].createElement(
 	        'span',
 	        { className: 'flash-text' },
 	        this.props.children
@@ -44356,7 +44401,8 @@
 	  }
 	});
 
-	module.exports = Flash;
+	exports['default'] = Flash;
+	module.exports = exports['default'];
 
 /***/ },
 /* 183 */
@@ -44364,22 +44410,35 @@
 
 	'use strict';
 
-	var $ = __webpack_require__(1);
+	var _interopRequireDefault = __webpack_require__(1)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
 
 	// Mobile-friendly navbar.
-	$(document).ready(function () {
-	  var $toggle = $('.navbar-menu-button');
-	  var $toggleMe = $('.navbar-toggle').removeClass('show');
+	var Navbar = {
+	  init: function init() {
+	    var $toggle = (0, _jquery2['default'])('.navbar-menu-button');
+	    var $toggleMe = (0, _jquery2['default'])('.navbar-toggle').removeClass('show');
 
-	  $toggle.on('click', function (e) {
-	    e.preventDefault();
-	    $toggleMe.slideToggle(function () {
-	      if ($toggleMe.is(':hidden')) {
-	        $toggleMe.removeAttr('style');
-	      }
+	    $toggle.on('click', function (e) {
+	      e.preventDefault();
+	      $toggleMe.slideToggle(function () {
+	        if ($toggleMe.is(':hidden')) {
+	          $toggleMe.removeAttr('style');
+	        }
+	      });
 	    });
-	  });
-	});
+	  }
+	};
+
+	exports['default'] = Navbar;
+	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);

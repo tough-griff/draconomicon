@@ -1,18 +1,18 @@
 import $ from 'jquery';
 import React from 'react';
 
-// Mount Flashes component.
-import Flashes from './components/flashes';
-$(document).ready(() => {
-  React.render(
-    <Flashes
-      initialFlashes={JSON.parse($('meta[name="drac:flashes"]').attr('content'))}
-    />,
-    $('#react-flashes')[0]
-  );
-});
+import Flashes from './components/Flashes';
 
 const DraconomiconFlashes = {
+  init() {
+    React.render(
+      <Flashes
+        initialFlashes={JSON.parse($('meta[name="drac:flashes"]').attr('content'))}
+      />,
+      $('#react-flashes')[0]
+    );
+  },
+
   add(key, value) {
     $(window).trigger('add.flash', {
       flashKey: key,
