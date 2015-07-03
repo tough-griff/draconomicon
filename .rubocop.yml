@@ -13,6 +13,9 @@ Metrics/LineLength:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/DotPosition:
+  Enabled: true
+  EnforcedStyle: leading
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes

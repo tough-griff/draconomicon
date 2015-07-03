@@ -37,6 +37,7 @@ RSpec.describe Character do
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:slug) }
   it { is_expected.to respond_to(:class_levels) }
+  it { is_expected.to serialize(:class_levels).as(Hash) }
   it { is_expected.to respond_to(:background) }
   it { is_expected.to respond_to(:player_name) }
   it { is_expected.to respond_to(:race) }
@@ -52,6 +53,13 @@ RSpec.describe Character do
 
   it { is_expected.to belong_to(:user) }
   it { is_expected.to respond_to(:user) }
+
+  it { is_expected.to have_many(:weapons) }
+  it { is_expected.to respond_to(:weapons) }
+  it { is_expected.to have_many(:armors) }
+  it { is_expected.to respond_to(:armors) }
+  it { is_expected.to have_many(:items) }
+  it { is_expected.to respond_to(:items) }
 
   describe "#user" do
     specify { expect(subject.user).to eq(user) }
