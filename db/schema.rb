@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224200808) do
+ActiveRecord::Schema.define(version: 20150703020110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "armors", force: :cascade do |t|
+    t.integer  "character_id"
+    t.string   "name",                 default: "",            null: false
+    t.string   "category",             default: "Light Armor", null: false
+    t.string   "cost"
+    t.integer  "armor_class"
+    t.integer  "minimum_str"
+    t.boolean  "stealth_disadvantage"
+    t.string   "weight"
+    t.text     "description"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "armors", ["character_id"], name: "index_armors_on_character_id", using: :btree
 
   create_table "characters", force: :cascade do |t|
     t.integer  "user_id"
@@ -82,5 +98,23 @@ ActiveRecord::Schema.define(version: 20150224200808) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
+
+  create_table "weapons", force: :cascade do |t|
+    t.integer  "character_id"
+    t.string   "name",         default: "",       null: false
+    t.string   "category",     default: "simple", null: false
+    t.string   "type",         default: "melee",  null: false
+    t.string   "cost"
+    t.integer  "attack_bonus"
+    t.string   "damage"
+    t.string   "damage_type"
+    t.string   "weight"
+    t.text     "properties"
+    t.text     "description"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
+  add_index "weapons", ["character_id"], name: "index_weapons_on_character_id", using: :btree
 
 end

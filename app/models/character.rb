@@ -35,13 +35,15 @@ class Character < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :weapons, dependent: :destroy
+  has_many :armors, dependent: :destroy
+
   extend FriendlyId
   friendly_id :name, use: :scoped, scope: :user
 
   validates :name, presence: true
   validates :alignment, presence: true, inclusion: ALIGNMENTS
 
-  # Serialize class_levels column property to a hash
   serialize :class_levels, Hash
 
   # Returns the total of all a character's classes' levels.
