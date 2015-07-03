@@ -46,6 +46,32 @@ if Rails.env == "development"
     end
   end
 
+  # === Character Items ===
+  character = Character.first
+  weapon = character.weapons.build do |w|
+    w.name = "Dagger"
+    w.category = "simple"
+    w.classification = "melee"
+    w.cost = "2 gp"
+    w.damage = "1d4"
+    w.damage_type = "piercing"
+    w.weight = "1 lb."
+    w.properties = ["finesse", "light", "thrown (20/60)"]
+  end
+  weapon.save!
+  print "."
+
+  armor = character.armors.build do |a|
+    a.name = "Padded Armor"
+    a.category = "Light Armor"
+    a.cost = "5 gp"
+    a.armor_class = 11
+    a.stealth_disadvantage = false
+    a.weight = "8 lb."
+  end
+  armor.save!
+  print "."
+
   puts
 else
   puts "Skipping seed data."

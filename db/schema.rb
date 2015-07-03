@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703022126) do
+ActiveRecord::Schema.define(version: 20150703024609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,9 +114,9 @@ ActiveRecord::Schema.define(version: 20150703022126) do
 
   create_table "weapons", force: :cascade do |t|
     t.integer  "character_id"
-    t.string   "name",         default: "",       null: false
-    t.string   "category",     default: "simple", null: false
-    t.string   "type",         default: "melee",  null: false
+    t.string   "name",           default: "",       null: false
+    t.string   "category",       default: "simple", null: false
+    t.string   "classification", default: "melee",  null: false
     t.string   "cost"
     t.integer  "attack_bonus"
     t.string   "damage"
@@ -124,8 +124,8 @@ ActiveRecord::Schema.define(version: 20150703022126) do
     t.string   "weight"
     t.text     "properties"
     t.text     "description"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   add_index "weapons", ["character_id"], name: "index_weapons_on_character_id", using: :btree
