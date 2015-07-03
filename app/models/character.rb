@@ -37,6 +37,7 @@ class Character < ActiveRecord::Base
 
   has_many :weapons, dependent: :destroy
   has_many :armors, dependent: :destroy
+  has_many :items, dependent: :destroy
 
   extend FriendlyId
   friendly_id :name, use: :scoped, scope: :user

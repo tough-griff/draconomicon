@@ -58,6 +58,8 @@ RSpec.describe Character do
   it { is_expected.to respond_to(:weapons) }
   it { is_expected.to have_many(:armors) }
   it { is_expected.to respond_to(:armors) }
+  it { is_expected.to have_many(:items) }
+  it { is_expected.to respond_to(:items) }
 
   describe "#user" do
     specify { expect(subject.user).to eq(user) }
