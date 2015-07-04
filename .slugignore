@@ -1,7 +1,6 @@
 /spec
 
 .hound.yml
-.jshintrc
 .rspec
 .rubocop.yml
 .scss-lint.yml
