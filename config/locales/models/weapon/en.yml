@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      weapon: "Weapon"
+    attributes:
+      item:
+        name: "Weapon"
+        category: "Weapon Category"
+        classification: "Weapon Type"
+        cost: "Cost"
+        attack_bonus: "Attack Bonus"
+        damage: "Damage"
+        damage_type: "Damage Type"
+        weight: "Weight"
+        properties: "Properties"
+        description: "Description"

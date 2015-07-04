@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      item: "Item"
+    attributes:
+      item:
+        name: "Item"
+        cost: "Cost"
+        weight: "Weight"
+        quantity: "Quantity"
+        description: "Description"

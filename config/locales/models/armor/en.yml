@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      armor: "Armor"
+    attributes:
+      armor:
+        name: "Armor"
+        category: "Armor Type"
+        cost: "Cost"
+        armor_class: "Base Armor Class"
+        minimum_str: "Minimum Strength Requirement"
+        stealth_disadvantage: "Disadvantage when using stealth?"
+        weight: "Weight"
+        description: "Description"
