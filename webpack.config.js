@@ -1,25 +1,25 @@
-var webpack = require('webpack');
+'use-strict';
+
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   // The base path which will be used to resolve entry points.
-  context: process.cwd(),
+  context: __dirname(),
 
   // The main entry point(s) for our application's frontend JS.
   entry: {
-    app: './js/_app.js'
+    app: './js/index.js'
   },
 
   output: {
     // This is our app/assets/javascripts directory, which is part of the
     // Sprockets pipeline.
-    path: path.join(process.cwd(), 'app', 'assets', 'javascripts'),
+    path: path.join(__dirname(), 'app', 'assets', 'javascripts'),
     // The filename of the compiled bundle. [name] refers to the entry point
     // being bundled.
     // e.g. app/assets/javascripts/app_bundle.js.
-    filename: '[name].bundle.js',
-    // Path used by webpack-dev-server.
-    publicPath: '/javascripts/'
+    filename: '[name].bundle.js'
   },
 
   module: {
@@ -31,9 +31,11 @@ module.exports = {
         test: /\.jsx?$/,
         // Exclude any libraries from npm or bower.
         exclude: /node_modules/,
-        // The babel-runtime module prevents injecting helpers into each file.
         query: {
+          // The babel-runtime module prevents injecting helpers into each file.
           optional: ['runtime']
+          // Stage 0 allows ES7 features
+          stage: 0
         }
       }
     ]

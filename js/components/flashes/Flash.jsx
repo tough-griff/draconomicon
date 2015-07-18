@@ -1,3 +1,4 @@
+// TODO refactor to Reflux & ES6/7
 import React from 'react/addons';
 
 const Flash = React.createClass({

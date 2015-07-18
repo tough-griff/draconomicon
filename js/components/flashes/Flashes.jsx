@@ -1,3 +1,4 @@
+// TODO refactor to Reflux & ES6/7
 import _ from 'lodash';
 import $ from 'jquery';
 import React from 'react/addons';

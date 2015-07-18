@@ -3,7 +3,5 @@
   %head
     = render "layouts/head"
   %body
-    = render "layouts/navbar"
-    .container
-      #react-flashes
-      = yield
+    #draconomicon
+    = javascript_include_tag "app.bundle.js"

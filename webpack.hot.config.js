@@ -1,39 +1,56 @@
-var webpack = require('webpack');
+'use-strict';
+
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   // The base path which will be used to resolve entry points.
-  context: process.cwd(),
+  context: __dirname,
 
   // The main entry point(s) for our application's frontend JS.
   entry: {
     app: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/only-dev-server',
-      './js/_app.js'
+      './js/index.js'
     ]
   },
 
   output: {
     // This is our app/assets/javascripts directory, which is part of the
     // Sprockets pipeline.
-    path: path.join(process.cwd(), 'app', 'assets', 'javascripts'),
+    path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     // The filename of the compiled bundle. [name] refers to the entry point
     // being bundled.
     // e.g. app/assets/javascripts/app_bundle.js.
     filename: '[name].bundle.js',
     // Path used by webpack-dev-server.
-    publicPath: 'http://localhost:8080/assets/'
+    publicPath: 'http://localhost:8080/javascripts/'
   },
 
   module: {
-    loaders: [
-      // babel-loader
+    preLoaders: [
       {
-        loaders: ['react-hot', 'babel'],
-        // Run babel on every .js and .jsx file.
+        loader: 'eslint',
         test: /\.jsx?$/,
-        // Exclude any libraries from npm or bower.
+        exclude: /node_modules/
+      }
+    ],
+    loaders: [
+      {
+        loader: 'babel',
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        query: {
+          optional: ['runtime'],
+          stage: 0
+        }
+      }
+    ],
+    postLoaders: [
+      {
+        loader: 'react-hot',
+        test: /\.jsx?$/,
         exclude: /node_modules/
       }
     ]
