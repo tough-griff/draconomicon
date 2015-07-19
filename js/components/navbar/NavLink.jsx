@@ -1,21 +1,22 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 
 export default class NavLink extends Component {
   static propTypes = {
     children: PropTypes.string,
-    href: PropTypes.string.isRequired
+    to: PropTypes.string.isRequired
   }
 
   render() {
-    const { children, href } = this.props;
+    const { children, to } = this.props;
     // TODO
     const classes = '';
 
     return (
       <li className={classes}>
-        <a href={href}>
+        <Link to={to}>
           {children}
-        </a>
+        </Link>
       </li>
     );
   }

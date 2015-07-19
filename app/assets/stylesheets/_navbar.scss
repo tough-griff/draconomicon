@@ -64,14 +64,14 @@
       text-align: right;
       width: 100%;
 
+      &.active {
+        background-color: $navbar-background-color-active;
+      }
+
       &:focus,
       &:hover {
         background-color: $navbar-background-color-hover;
-      }
-    }
-
-    &.active > a {
-      background-color: $navbar-background-color-active;
+        }
     }
   }
 

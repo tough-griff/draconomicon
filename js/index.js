@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './containers/App';
+import Root from './Root';
 
-ReactDOM.render(<App />, document.getElementById('draconomicon'));
+ReactDOM.render(<Root />, document.getElementById('draconomicon'));
