@@ -11,7 +11,11 @@
 /log/*
 !/log/.keep
 /tmp
+*.log
 
 # Misc.
 .env
 .envrc
+
+# npm modules
+node_modules
