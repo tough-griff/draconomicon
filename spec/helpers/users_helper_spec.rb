@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe UsersHelper do
-  let(:user) { FactoryGirl.build(:user) }
+  let(:user) { build_stubbed(:user) }
 
   describe "#gravatar_for" do
     it "creates an image tag" do

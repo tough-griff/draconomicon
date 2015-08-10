@@ -29,10 +29,7 @@
 require "rails_helper"
 
 RSpec.describe Character do
-  let(:user) { create(:user) }
-  let(:character) { create(:character, user: user) }
-
-  subject { character }
+  subject { create(:character) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:slug) }
@@ -60,10 +57,6 @@ RSpec.describe Character do
   it { is_expected.to respond_to(:armors) }
   it { is_expected.to have_many(:items) }
   it { is_expected.to respond_to(:items) }
-
-  describe "#user" do
-    specify { expect(subject.user).to eq(user) }
-  end
 
   it { is_expected.to be_valid }
   it { is_expected.to validate_presence_of(:name) }

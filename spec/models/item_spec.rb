@@ -19,12 +19,8 @@
 
 require "rails_helper"
 
-RSpec.describe Item, type: :model do
-  let(:user) { create(:user) }
-  let(:character) { create(:character, user: user) }
-  let(:item) { create(:item, character: character) }
-
-  subject { item }
+RSpec.describe Item do
+  subject { create(:item) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:cost) }

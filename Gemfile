@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.2.2"
 
-gem "rails", "4.2.1"
+gem "rails", "~> 4.2.3"
 
 gem "active_link_to"
 gem "airbrake"
@@ -35,7 +35,10 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "bitters", require: false
+  gem "brakeman", require: false
+  gem "bundler-audit", require: false
   gem "ffaker", require: false
+  gem "lol_dba"
   gem "spring-commands-rspec"
   gem "spring"
 
@@ -47,7 +50,6 @@ end
 
 group :development, :test do
   gem "awesome_print"
-  gem "bundler-audit", require: false
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails"

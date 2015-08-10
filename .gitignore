@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 *.log
+spec/.example_status
 
 # Misc.
 .env

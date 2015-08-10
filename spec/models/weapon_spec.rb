@@ -25,11 +25,7 @@
 require "rails_helper"
 
 RSpec.describe Weapon do
-  let(:user) { create(:user) }
-  let(:character) { create(:character, user: user) }
-  let(:weapon) { create(:weapon, character: character) }
-
-  subject { weapon }
+  subject { create(:weapon) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:category) }

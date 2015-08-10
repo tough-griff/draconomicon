@@ -160,9 +160,6 @@ Devise.setup do |config|
   # time the user will be asked for credentials again. Default is 30 minutes.
   config.timeout_in = 2.days
 
-  # If true, expires auth token on session timeout.
-  config.expire_auth_token_on_timeout = false
-
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.

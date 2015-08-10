@@ -39,9 +39,7 @@
 require "rails_helper"
 
 RSpec.describe User do
-  let(:user) { create(:user) }
-
-  subject { user }
+  subject { create(:user) }
 
   it { is_expected.to respond_to(:email) }
   it { is_expected.to respond_to(:name) }
@@ -58,6 +56,6 @@ RSpec.describe User do
   it { is_expected.to validate_uniqueness_of(:slug) }
 
   describe "#to_s" do
-    specify { expect(user.to_s).to eq(user.name) }
+    specify { expect(subject.to_s).to eq(subject.name) }
   end
 end

@@ -23,11 +23,7 @@
 require "rails_helper"
 
 RSpec.describe Armor do
-  let(:user) { create(:user) }
-  let(:character) { create(:character, user: user) }
-  let(:armor) { create(:armor, character: character) }
-
-  subject { armor }
+  subject { create(:armor) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:category) }
