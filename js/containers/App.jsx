@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Navbar } from '../components/navbar';
+import Navbar from '../components/Navbar';
 
 export default class App extends Component {
   static propTypes = {
