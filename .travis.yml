@@ -20,3 +20,5 @@ notifications:
 script:
   - bundle exec rake db:migrate
   - bundle exec rake spec
+services:
+  - redis-server
