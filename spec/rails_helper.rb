@@ -26,10 +26,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
-# Checks for pending migrations before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.check_pending!
-
 # Use poltergeist (PhantomJS) as Capybara's JavaScript driver.
 Capybara.javascript_driver = :poltergeist
 

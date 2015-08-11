@@ -38,7 +38,9 @@ group :development do
   gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "ffaker", require: false
+  gem "foreman", require: false
   gem "lol_dba"
+  gem "mailcatcher", require: false
   gem "spring-commands-rspec"
   gem "spring"
 
