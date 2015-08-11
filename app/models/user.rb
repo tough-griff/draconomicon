@@ -48,9 +48,14 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :trackable, :validatable, :confirmable, :lockable, :timeoutable, :async
+         :trackable, :validatable, :confirmable, :lockable, :timeoutable
 
   def to_s
     name
+  end
+
+  # Send Devise emails through the ActiveJob in the background
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 end

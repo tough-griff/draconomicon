@@ -42,5 +42,8 @@ module Draconomicon
 
     # Enable react-rails addons
     config.react.addons = true
+
+    # Use Sidekiq as the ActiveJob adapter
+    config.active_job.queue_adapter = :sidekiq
   end
 end
