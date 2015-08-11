@@ -3,7 +3,7 @@
 # Table name: items
 #
 #  id           :integer          not null, primary key
-#  character_id :integer
+#  character_id :integer          not null
 #  name         :string           default(""), not null
 #  cost         :string
 #  weight       :string

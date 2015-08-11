@@ -3,7 +3,7 @@
 # Table name: armors
 #
 #  id                   :integer          not null, primary key
-#  character_id         :integer
+#  character_id         :integer          not null
 #  name                 :string           default(""), not null
 #  category             :string           default("Light Armor"), not null
 #  cost                 :string
