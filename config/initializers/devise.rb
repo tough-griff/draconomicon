@@ -7,11 +7,13 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   config.secret_key = Rails.application.secrets.devise_secret_key do
+    # :nocov:
     if Rails.env.production?
       warn "Devise secret key not set in production; defaulting to fake key"
     end
 
-    "FAKE SECRET KEY"
+    "FAKE_SECRET_KEY"
+    # :nocov:
   end
 
   # ==> Mailer Configuration
