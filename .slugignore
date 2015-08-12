@@ -1,8 +1,10 @@
+/bin
 /spec
-
+.env.sample
 .hound.yml
 .rspec
 .rubocop.yml
 .scss-lint.yml
 .travis.yml
+Procfile.dev
 README.md
