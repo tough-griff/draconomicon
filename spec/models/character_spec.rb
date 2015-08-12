@@ -3,7 +3,7 @@
 # Table name: characters
 #
 #  id           :integer          not null, primary key
-#  user_id      :integer
+#  user_id      :integer          not null
 #  name         :string           default(""), not null
 #  slug         :string           not null
 #  class_levels :text

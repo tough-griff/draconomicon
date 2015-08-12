@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703024609) do
+ActiveRecord::Schema.define(version: 20150811210613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "armors", force: :cascade do |t|
-    t.integer  "character_id"
+    t.integer  "character_id",                                 null: false
     t.string   "name",                 default: "",            null: false
     t.string   "category",             default: "Light Armor", null: false
     t.string   "cost"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150703024609) do
   add_index "armors", ["character_id"], name: "index_armors_on_character_id", using: :btree
 
   create_table "characters", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",                               null: false
     t.string   "name",         default: "",             null: false
     t.string   "slug",                                  null: false
     t.text     "class_levels"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150703024609) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "items", force: :cascade do |t|
-    t.integer  "character_id"
+    t.integer  "character_id",              null: false
     t.string   "name",         default: "", null: false
     t.string   "cost"
     t.string   "weight"
@@ -130,4 +130,8 @@ ActiveRecord::Schema.define(version: 20150703024609) do
 
   add_index "weapons", ["character_id"], name: "index_weapons_on_character_id", using: :btree
 
+  add_foreign_key "armors", "characters", on_delete: :cascade
+  add_foreign_key "characters", "users", on_delete: :cascade
+  add_foreign_key "items", "characters", on_delete: :cascade
+  add_foreign_key "weapons", "characters", on_delete: :cascade
 end

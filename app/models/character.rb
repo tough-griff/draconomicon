@@ -3,7 +3,7 @@
 # Table name: characters
 #
 #  id           :integer          not null, primary key
-#  user_id      :integer
+#  user_id      :integer          not null
 #  name         :string           default(""), not null
 #  slug         :string           not null
 #  class_levels :text
@@ -35,9 +35,9 @@ class Character < ActiveRecord::Base
 
   belongs_to :user
 
-  has_many :weapons, dependent: :destroy
-  has_many :armors, dependent: :destroy
-  has_many :items, dependent: :destroy
+  has_many :armors
+  has_many :items
+  has_many :weapons
 
   extend FriendlyId
   friendly_id :name, use: :scoped, scope: :user

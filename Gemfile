@@ -38,6 +38,7 @@ group :development do
   gem "bundler-audit", require: false
   gem "ffaker", require: false
   gem "foreman", require: false
+  gem "immigrant"
   gem "lol_dba"
   gem "mailcatcher", require: false
   gem "spring-commands-rspec"
