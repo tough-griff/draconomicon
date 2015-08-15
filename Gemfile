@@ -60,7 +60,7 @@ end
 
 group :test do
   gem "capybara"
-  gem "codeclimate-test-reporter", require: false
+  gem "coveralls", require: false
   gem "database_cleaner", require: false
   gem "factory_girl_rails"
   gem "formulaic"

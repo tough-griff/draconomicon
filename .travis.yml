@@ -4,8 +4,6 @@ rvm:
 
 addons:
   postgresql: "9.3"
-  code_climate:
-    repo_token: 024f95ec0563c35d69be6daa57c3cd415c57c55ae532f7590529cf3819c4e13d
 before_script:
   - psql -c 'create database draconomicon_test;' -U postgres
 cache: bundler
