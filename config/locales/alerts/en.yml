@@ -1,0 +1,8 @@
+en:
+  alerts:
+    catchall: "Sorry, we could not find the page you were looking for."
+    correct_user: "You cannot perform that action for another user."
+    signed_in_user: "You must be signed in to perform that action."
+
+    characters:
+      created: "Successfully created character."

@@ -18,4 +18,5 @@ en:
       index: "All users"
       show: "%{user}'s profile"
     characters:
+      new: "New character"
       show: "%{character}"

@@ -11,6 +11,7 @@ en:
     new_user_unlock: "Didn't receive unlock instructions?"
     new_user_characters: "New character"
     edit_user_character: "Edit character"
+    new_user_character: "New character"
     user_character: "Character sheet"
     users: "Users"
     user: "Profile"

@@ -6,7 +6,7 @@ en:
       character:
         name: "Character Name"
         slug: "Friendly ID"
-        class_and_level: "Class and Level"
+        class_levels: "Class and Level"
         background: "Background"
         player_name: "Player Name"
         race: "Race"

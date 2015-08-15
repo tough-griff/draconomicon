@@ -3,13 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  include SessionsHelper
+
   # Add additional parameters to devise models
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   # Application-wide catch-all redirect
   def catchall
-    flash[:notice] = t(".flashes.redirect")
-    redirect_to :root
+    redirect_to root_url, notice: t("alerts.catchall")
   end
 
   protected
