@@ -2,7 +2,8 @@ class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
       t.belongs_to :character, index: true
-      t.string     :name,      null: false, default: ""
+
+      t.string     :name,        default: "", null: false
       t.string     :cost
       t.string     :weight
       t.integer    :quantity

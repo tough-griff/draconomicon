@@ -4,18 +4,36 @@ AllCops:
     - Gemfile
     - config.ru
   Exclude:
-    - db/**/*
-    - bin/*
+    - db/schema.rb
   RunRailsCops: true
-Lint/ParenthesesAsGroupedExpression:
-  Enabled: false
+Lint/AssignmentInCondition:
+  Exclude:
+    - bin/*
+Lint/HandleExceptions:
+  Exclude:
+    - bin/*
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*
 Metrics/LineLength:
   Enabled: false
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+Rails/Output:
+  Exclude:
+    - 'db/**/*'
 Style/Documentation:
   Enabled: false
 Style/DotPosition:
   Enabled: true
   EnforcedStyle: leading
+Style/ExtraSpacing:
+  Exclude:
+    - db/migrate/*
+Style/SingleSpaceBeforeFirstArg:
+  Exclude:
+    - db/migrate/*
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes

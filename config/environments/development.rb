@@ -10,7 +10,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -39,7 +39,7 @@ Rails.application.configure do
   # ActionMailer
   config.action_mailer.default_url_options = { host: "localhost:#{ENV['PORT'] || 3000}" }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { address: "localhost", port: ENV['MAILCATCHER_PORT'] || 1025 }
+  config.action_mailer.smtp_settings = { address: "localhost", port: ENV["MAILCATCHER_PORT"] || 1025 }
   config.action_mailer.raise_delivery_errors = true
 
   # react-rails
