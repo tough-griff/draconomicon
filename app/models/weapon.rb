@@ -23,10 +23,10 @@
 #
 
 class Weapon < ActiveRecord::Base
+  include Inventoriable
+
   CATEGORIES = %w(simple martial)
   CLASSIFICATIONS = %w(melee ranged)
-
-  belongs_to :character
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: CATEGORIES

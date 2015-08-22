@@ -28,6 +28,9 @@
 #
 
 class Character < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :scoped, scope: :user
+
   ALIGNMENTS = [
     "Lawful Good", "Neutral Good", "Chaotic Good",
     "Lawful Neutral", "True Neutral", "Chaotic Neutral",
@@ -42,9 +45,6 @@ class Character < ActiveRecord::Base
   has_many :armors
   has_many :items
   has_many :weapons
-
-  extend FriendlyId
-  friendly_id :name, use: :scoped, scope: :user
 
   validates :name, presence: true
   validates :alignment, presence: true, inclusion: ALIGNMENTS

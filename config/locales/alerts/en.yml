@@ -5,4 +5,6 @@ en:
     signed_in_user: "You must be signed in to perform that action."
 
     characters:
-      created: "Successfully created character."
+      created: "Successfully created %{name}."
+      updated: "Successfully updated %{name}."
+      deleted: "Successfully deleted %{name}."

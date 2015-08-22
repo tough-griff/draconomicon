@@ -37,10 +37,10 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :characters
-
   extend FriendlyId
   friendly_id :name
+
+  has_many :characters
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 32 }
   validates :slug, uniqueness: true

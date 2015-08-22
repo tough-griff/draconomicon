@@ -32,7 +32,7 @@ if Rails.env.development?
 
   # === Characters ===
   users = User.limit(5)
-  users.each do |user|
+  users.find_each do |user|
     3.times do
       character = user.characters.build do |c|
         c.name = FFaker::Name.first_name

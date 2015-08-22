@@ -1,5 +1,4 @@
-input[disabled],
-textarea[disabled] {
+[disabled] {
   background-color: lighten($light-gray, 10%);
   cursor: not-allowed;
 }

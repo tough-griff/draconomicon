@@ -21,9 +21,9 @@
 #
 
 class Armor < ActiveRecord::Base
-  CATEGORIES = ["Light Armor", "Medium Armor", "Heavy Armor", "Shield"]
+  include Inventoriable
 
-  belongs_to :character
+  CATEGORIES = ["Light Armor", "Medium Armor", "Heavy Armor", "Shield"]
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: CATEGORIES

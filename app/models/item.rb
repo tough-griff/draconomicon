@@ -18,7 +18,7 @@
 #
 
 class Item < ActiveRecord::Base
-  belongs_to :character
+  include Inventoriable
 
   validates :name, presence: true
 end

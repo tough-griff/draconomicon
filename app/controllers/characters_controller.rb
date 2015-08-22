@@ -12,7 +12,7 @@ class CharactersController < ApplicationController
     @character = @user.characters.build(character_params)
 
     if @character.save
-      redirect_to [@user, @character], flash: { success: t("alerts.characters.created") }
+      redirect_to [@user, @character], flash: { success: t("alerts.characters.created", name: @character.name) }
     else
       render :new
     end
@@ -26,7 +26,7 @@ class CharactersController < ApplicationController
 
   def update
     if @character.update(character_params)
-      redirect_to [@user, @character], flash: { success: t("alerts.characters.updated") }
+      redirect_to [@user, @character], flash: { success: t("alerts.characters.updated", name: @character.name) }
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class CharactersController < ApplicationController
 
   def destroy
     if @character.destroy
-      redirect_to @user, flash: { success: t("alerts.characters.deleted") }
+      redirect_to @user, flash: { success: t("alerts.characters.deleted", name: @character.name) }
     else
       redirect_to @character
     end

@@ -128,7 +128,6 @@ RSpec.describe CharactersController do
         expect(assigns(:character)).to eq(character)
       end
     end
-
   end
 
   describe "PUT 'update'" do
