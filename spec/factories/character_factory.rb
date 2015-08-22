@@ -23,6 +23,7 @@
 #
 # Indexes
 #
+#  index_characters_on_slug     (slug)
 #  index_characters_on_user_id  (user_id)
 #
 

@@ -5,7 +5,7 @@ RSpec.describe UsersController do
 
   describe "GET 'index'" do
     before do
-      2.times do
+      14.times do
         create(:user)
       end
       get :index
@@ -16,7 +16,7 @@ RSpec.describe UsersController do
     end
 
     it "assigns an array of users" do
-      expect(assigns(:users)).to eq(User.first(3))
+      expect(assigns(:users)).to eq(User.first(9))
     end
   end
 

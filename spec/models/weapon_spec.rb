@@ -25,7 +25,7 @@
 require "rails_helper"
 
 RSpec.describe Weapon do
-  subject { create(:weapon) }
+  subject { build(:weapon) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:category) }

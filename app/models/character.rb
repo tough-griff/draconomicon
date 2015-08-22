@@ -23,6 +23,7 @@
 #
 # Indexes
 #
+#  index_characters_on_slug     (slug)
 #  index_characters_on_user_id  (user_id)
 #
 
@@ -32,6 +33,9 @@ class Character < ActiveRecord::Base
     "Lawful Neutral", "True Neutral", "Chaotic Neutral",
     "Lawful Evil", "Neutral Evil", "Chaotic Evil"
   ]
+
+  # TODO: validate user entered classes and levels
+  CLASS_DESCRIPTION_REGEX = %r{\A((\w{3} \d+)/?)+\Z}
 
   belongs_to :user
 
@@ -78,5 +82,11 @@ class Character < ActiveRecord::Base
   # Return a string representation of a character's classes and levels
   def class_description
     class_levels.map { |k, v| "#{k.capitalize} #{v}" }.join("/")
+  end
+
+  # TODO: get this working
+  # Parses the string representation of a character's classes and levels
+  def parse_class_description(description)
+    Hash[description.split("/").map { |str| str.downcase.split }]
   end
 end

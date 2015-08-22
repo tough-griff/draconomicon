@@ -24,7 +24,7 @@ class CharactersController < ApplicationController
   private
 
   PERMITTED_PARAMS = %i(
-    name class_levels background player_name race alignment experience age
+    name background player_name race alignment experience age
     height weight eyes skin hair
   )
 
