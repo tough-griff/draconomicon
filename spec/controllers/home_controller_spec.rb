@@ -2,16 +2,14 @@ require "rails_helper"
 
 RSpec.describe HomeController do
   describe "GET 'index'" do
-    it "renders the 'index' template" do
-      get :index
-      expect(response).to render_template(:index)
-    end
+    before { get :index }
+
+    it { is_expected.to render_template(:index) }
   end
 
   describe "GET 'about'" do
-    it "renders the 'about' template" do
-      get :about
-      expect(response).to render_template(:about)
-    end
+    before { get :about }
+
+    it { is_expected.to render_template(:about) }
   end
 end
