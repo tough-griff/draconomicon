@@ -20,5 +20,7 @@
 class Item < ActiveRecord::Base
   include Inventoriable
 
+  default_scope { order(created_at: :asc) }
+
   validates :name, presence: true
 end

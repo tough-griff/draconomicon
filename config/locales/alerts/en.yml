@@ -5,6 +5,12 @@ en:
     signed_in_user: "You must be signed in to perform that action."
 
     characters:
-      created: "Successfully created %{name}."
-      updated: "Successfully updated %{name}."
-      deleted: "Successfully deleted %{name}."
+      create:
+        success: "Successfully created %{name}."
+        failure: "Unable to create character."
+      update:
+        success: "Successfully updated %{name}."
+        failure: "Unable to update character."
+      delete:
+        success: "Successfully deleted %{name}."
+        failure: "Unable to delete character."

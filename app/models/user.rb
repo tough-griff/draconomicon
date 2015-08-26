@@ -38,7 +38,8 @@
 
 class User < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name
+
+  default_scope { order(created_at: :asc) }
 
   has_many :characters
 
@@ -49,6 +50,8 @@ class User < ActiveRecord::Base
   # :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable, :confirmable, :lockable, :timeoutable
+
+  friendly_id :name
 
   def to_s
     name

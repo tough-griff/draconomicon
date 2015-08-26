@@ -12,8 +12,11 @@ class CharactersController < ApplicationController
     @character = @user.characters.build(character_params)
 
     if @character.save
-      redirect_to [@user, @character], flash: { success: t("alerts.characters.created", name: @character.name) }
+      redirect_to [@user, @character], flash: {
+        success: t("alerts.characters.create.success", name: @character.name)
+      }
     else
+      flash.now[:error] = t("alerts.characters.create.failure")
       render :new
     end
   end
@@ -26,17 +29,24 @@ class CharactersController < ApplicationController
 
   def update
     if @character.update(character_params)
-      redirect_to [@user, @character], flash: { success: t("alerts.characters.updated", name: @character.name) }
+      redirect_to [@user, @character], flash: {
+        success: t("alerts.characters.update.success", name: @character.name)
+      }
     else
+      flash.now[:error] = t("alerts.characters.update.failure")
       render :edit
     end
   end
 
   def destroy
     if @character.destroy
-      redirect_to @user, flash: { success: t("alerts.characters.deleted", name: @character.name) }
+      redirect_to @user, flash: {
+        success: t("alerts.characters.delete.success", name: @character.name)
+      }
     else
-      redirect_to @character
+      redirect_to @character, flash: {
+        error: t("alerts.characters.delete.failure")
+      }
     end
   end
 
@@ -62,6 +72,6 @@ class CharactersController < ApplicationController
 
   def correct_user
     return if current_user?(@user)
-    redirect_to root_url, flash: { alert: t("alerts.correct_user") }
+    redirect_to root_path, flash: { alert: t("alerts.correct_user") }
   end
 end

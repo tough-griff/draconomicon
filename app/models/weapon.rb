@@ -25,6 +25,8 @@
 class Weapon < ActiveRecord::Base
   include Inventoriable
 
+  default_scope { order(created_at: :asc) }
+
   CATEGORIES = %w(simple martial)
   CLASSIFICATIONS = %w(melee ranged)
 

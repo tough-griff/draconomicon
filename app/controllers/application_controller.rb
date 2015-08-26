@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   # Application-wide catch-all redirect
   def catchall
-    redirect_to root_url, flash: { notice: t("alerts.catchall") }
+    redirect_to root_path, flash: { notice: t("alerts.catchall") }
   end
 
   protected

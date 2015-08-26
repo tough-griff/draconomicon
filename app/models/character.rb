@@ -29,7 +29,8 @@
 
 class Character < ActiveRecord::Base
   extend FriendlyId
-  friendly_id :name, use: :scoped, scope: :user
+
+  default_scope { order(created_at: :asc) }
 
   ALIGNMENTS = [
     "Lawful Good", "Neutral Good", "Chaotic Good",
@@ -50,6 +51,8 @@ class Character < ActiveRecord::Base
   validates :alignment, presence: true, inclusion: ALIGNMENTS
 
   serialize :class_levels, Hash
+
+  friendly_id :name, use: :scoped, scope: :user
 
   # Returns the total of all a character's classes' levels.
   def character_level
