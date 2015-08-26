@@ -17,12 +17,12 @@
 
       a,
       span {
-        @include transition(all .2s ease-in-out);
         border: 1px solid transparent;
         float: left;
         margin-left: -1px;
         padding: ($base-spacing / 4) ($gutter / 2);
         position: relative;
+        transition: all $base-duration $base-timing;
         width: 38px;
       }
 
@@ -34,12 +34,12 @@
         &:hover,
         &:focus {
           background: $pagination-hover-background;
-          color: $action-color;
+          color: $blue;
         }
       }
 
       span {
-        background: $action-color;
+        background: $blue;
         color: $pagination-hover-background;
 
         &.disabled {

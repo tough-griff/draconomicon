@@ -1,7 +1,7 @@
 // Stolen from GitHub's CSS
 .tooltipped {
   $tooltip-background-color: rgba(0, 0, 0, .8);
-  $tooltip-text-color: #fff;
+  $tooltip-text-color: $white;
   $tooltip-z-index: 99999;
 
   position: relative;

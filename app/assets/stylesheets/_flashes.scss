@@ -1,5 +1,7 @@
-@mixin flash($color) {
-  background: $color;
+$default-flash-color: #eee;
+
+@mixin flash($color: $default-flash-color) {
+  background-color: $color;
   color: darken($color, 60);
 
   a {
@@ -13,8 +15,6 @@
 }
 
 .flashes {
-  $default-flash-color: #eee;
-
   z-index: 999;
 
   @include media($medium-screen) {
@@ -22,7 +22,7 @@
   }
 
   .flash {
-    @include flash($default-flash-color);
+    @include flash;
     border-radius: $base-border-radius;
     display: block;
     margin-bottom: $small-spacing;

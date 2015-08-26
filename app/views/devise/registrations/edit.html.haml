@@ -9,6 +9,6 @@
   = f.input :current_password, required: true, hint: true
   .form-actions
     = f.submit class: "submit"
-%form.delete-user
-  %h3.form-heading= t(".delete.heading")
-  = link_to t(".delete.submit"), registration_path(resource_name), data: { confirm: t(".delete.confirmation") }, method: :delete
+.delete-user
+  %h2= t(".delete.heading")
+  = link_to t(".delete.submit"), registration_path(resource_name), class: "button red", data: { confirm: t(".delete.confirmation") }, method: :delete

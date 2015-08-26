@@ -1,5 +1,21 @@
-// Colors
-$alert-color: #fff6bf;
-$error-color: #fbe3e4;
-$notice-color: lighten($action-color, 40%);
-$success-color: #e6efc2;
+// === Colors ===
+$red: #e5474d;
+$light-red: lighten($red, 35%);
+
+$orange: #f47a33;
+$light-orange: lighten($orange, 30%);
+
+$yellow: #ffe026;
+$light-yellow: lighten($yellow, 30%);
+
+$green: #9bb530;
+$light-green: lighten($green, 40%);
+
+$blue: #477dca;
+$light-blue: lighten($blue, 40%);
+
+// Flashes
+$alert-color: $light-yellow;
+$error-color: $light-red;
+$notice-color: $light-blue;
+$success-color: $light-green;

@@ -1,5 +1,3 @@
-exclude: "app/assets/stylesheets/bitters/**"
-
 linters:
   NestingDepth:
     enabled: true

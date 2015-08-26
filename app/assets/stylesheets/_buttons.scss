@@ -1,0 +1,60 @@
+@mixin button($color: $blue) {
+  background-color: $color;
+
+  &:hover,
+  &:focus {
+    background-color: shade($color, 20%);
+  }
+
+  &:disabled:hover {
+    background-color: $color;
+  }
+}
+
+#{$all-buttons},
+.button {
+  @include button;
+  appearance: none;
+  border: 0;
+  border-radius: $base-border-radius;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
+  &.red {
+    @include button($red);
+  }
+
+  &.yellow {
+    @include button($yellow);
+  }
+
+  &.green {
+    @include button($green);
+  }
+
+  &.blue {
+    @include button($blue);
+  }
+}
