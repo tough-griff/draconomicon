@@ -7,3 +7,16 @@
   in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
   officia deserunt mollit anim id est laborum.
+
+%p
+  = tooltip "Just testing a tooltip!", direction: :e do
+    Hover over me!
+
+= tooltip "Click me to add a succes alert!", direction: :s do
+  = link_to "javascript:void(0)", class: "button", id: "test" do
+    = icon "star"
+
+:javascript
+  $('#test').on('click', function() {
+    Draconomicon.Flashes.add('success', 'Hello world!');
+  });

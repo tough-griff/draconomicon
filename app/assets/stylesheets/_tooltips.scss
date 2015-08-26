@@ -4,6 +4,7 @@
   $tooltip-text-color: $white;
   $tooltip-z-index: 99999;
 
+  display: inline-block;
   position: relative;
 
   &:before {
