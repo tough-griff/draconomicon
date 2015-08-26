@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
   end
 
-  def style_test
+  def style
     flash[:error] = "Some error string! Oh no!"
     flash[:alert] = "An alert message. Please be careful!"
     flash[:success] = "Hooray! A success."

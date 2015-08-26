@@ -37,6 +37,7 @@
 #                     root GET    /                                             home#index
 #                     home GET    /home(.:format)                               home#index
 #                    about GET    /about(.:format)                              home#about
+#                    style GET    /style(.:format)                              home#style_test
 #                          GET    /*path(.:format)                              application#catchall
 #
 
