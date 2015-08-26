@@ -1,3 +1,13 @@
+@mixin attach-to-input($color) {
+  @include border-bottom-radius($base-border-radius);
+  @include font-smoothing;
+  background-color: $color;
+  color: $white;
+  display: block;
+  margin-bottom: $small-spacing;
+  padding: 0 ($base-spacing / 3);
+}
+
 .form-group {
   $form-error-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($red, $lightness: -5%, $alpha: -.3);
 
@@ -44,13 +54,7 @@
     }
 
     > .hint {
-      @include border-bottom-radius($base-border-radius);
-      background-color: $blue;
-      color: $white;
-      display: block;
-      -webkit-font-smoothing: antialiased;
-      margin-bottom: $small-spacing;
-      padding: 0 ($base-spacing / 3);
+      @include attach-to-input($blue);
     }
 
     &.input-error > .hint {
@@ -81,13 +85,7 @@
     }
 
     > .error {
-      @include border-bottom-radius($base-border-radius);
-      background-color: $red;
-      color: $white;
-      display: block;
-      -webkit-font-smoothing: antialiased;
-      margin-bottom: $small-spacing;
-      padding: 0 ($base-spacing / 3);
+      @include attach-to-input($red);
     }
 
     &.connected > .error {

@@ -14,6 +14,7 @@
 #{$all-buttons},
 .button {
   @include button;
+  @include font-smoothing;
   appearance: none;
   border: 0;
   border-radius: $base-border-radius;
@@ -22,7 +23,6 @@
   display: inline-block;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
   padding: $small-spacing $base-spacing;
