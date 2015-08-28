@@ -1,39 +1,39 @@
 {
-  "name":"draconomicon",
-  "scripts":{
-    "postdeploy":"bundle exec rake db:setup"
+  "name": "draconomicon",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup"
   },
-  "env":{
-    "DEPLOY_TASKS":"",
-    "DEVISE_SECRET_KEY":{
-      "required":true
+  "env": {
+    "DEPLOY_TASKS": "",
+    "DEVISE_SECRET_KEY": {
+      "required": true
     },
-    "LANG":{
-      "required":true
+    "LANG": {
+      "required": true
     },
-    "MAX_POOL_SIZE":{
-      "required":true
+    "MAX_POOL_SIZE": {
+      "required": true
     },
-    "RACK_ENV":{
-      "required":true
+    "RACK_ENV": {
+      "required": true
     },
-    "RAILS_ENV":{
-      "required":true
+    "RAILS_ENV": {
+      "required": true
     },
-    "REDIS_PROVIDER":{
-      "required":true
+    "REDIS_PROVIDER": {
+      "required": true
     },
-    "SECRET_KEY_BASE":{
-      "required":true
+    "SECRET_KEY_BASE": {
+      "required": true
     },
-    "SENDGRID_PASSWORD":{
-      "required":true
+    "SENDGRID_PASSWORD": {
+      "required": true
     },
-    "SENDGRID_USERNAME":{
-      "required":true
+    "SENDGRID_USERNAME": {
+      "required": true
     }
   },
-  "addons":[
+  "addons": [
     "airbrake",
     "newrelic",
     "papertrail",
