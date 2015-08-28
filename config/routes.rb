@@ -22,8 +22,7 @@
 #              user_unlock POST   /users/unlock(.:format)                       devise/unlocks#create
 #          new_user_unlock GET    /users/unlock/new(.:format)                   devise/unlocks#new
 #                          GET    /users/unlock(.:format)                       devise/unlocks#show
-#          user_characters GET    /users/:user_id/characters(.:format)          characters#index
-#                          POST   /users/:user_id/characters(.:format)          characters#create
+#          user_characters POST   /users/:user_id/characters(.:format)          characters#create
 #       new_user_character GET    /users/:user_id/characters/new(.:format)      characters#new
 #      edit_user_character GET    /users/:user_id/characters/:id/edit(.:format) characters#edit
 #           user_character GET    /users/:user_id/characters/:id(.:format)      characters#show
@@ -45,7 +44,7 @@ require "sidekiq/web"
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: %i(index show) do
-    resources :characters
+    resources :characters, except: %i(index)
   end
 
   authenticate :user, ->(user) { user.admin? } do

@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      character_class: "Class"
+    attributes:
+      character_class:
+        name: "Class Name"
+        abbreviation: "Class Abbreviation"

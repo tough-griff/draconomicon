@@ -23,15 +23,23 @@
 #
 # Indexes
 #
+#  index_characters_on_slug     (slug)
 #  index_characters_on_user_id  (user_id)
 #
 
 class Character < ActiveRecord::Base
+  extend FriendlyId
+
+  default_scope { order(created_at: :asc) }
+
   ALIGNMENTS = [
     "Lawful Good", "Neutral Good", "Chaotic Good",
     "Lawful Neutral", "True Neutral", "Chaotic Neutral",
     "Lawful Evil", "Neutral Evil", "Chaotic Evil"
   ]
+
+  # TODO: validate user entered classes and levels
+  CLASS_DESCRIPTION_REGEX = %r{\A((\w{3} \d+)/?)+\Z}
 
   belongs_to :user
 
@@ -39,13 +47,12 @@ class Character < ActiveRecord::Base
   has_many :items
   has_many :weapons
 
-  extend FriendlyId
-  friendly_id :name, use: :scoped, scope: :user
-
   validates :name, presence: true
   validates :alignment, presence: true, inclusion: ALIGNMENTS
 
   serialize :class_levels, Hash
+
+  friendly_id :name, use: :scoped, scope: :user
 
   # Returns the total of all a character's classes' levels.
   def character_level
@@ -78,5 +85,11 @@ class Character < ActiveRecord::Base
   # Return a string representation of a character's classes and levels
   def class_description
     class_levels.map { |k, v| "#{k.capitalize} #{v}" }.join("/")
+  end
+
+  # TODO: get this working
+  # Parses the string representation of a character's classes and levels
+  def parse_class_description(description)
+    Hash[description.split("/").map { |str| str.downcase.split }]
   end
 end

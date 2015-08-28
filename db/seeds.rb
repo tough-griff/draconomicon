@@ -3,10 +3,24 @@ if Rails.env.development? || Rails.env.staging?
 
   puts "Seeding database..."
 
-  CLASSES = %i(bbn brd clr drd ftr mnk pal rgr rog src wiz)
+  CLASSES = {
+    bbn: "Barbarian",
+    brd: "Bard",
+    clr: "Cleric",
+    drd: "Druid",
+    ftr: "Fighter",
+    mnk: "Monk",
+    pal: "Paladin",
+    rgr: "Ranger",
+    rog: "Rogue",
+    src: "Sorcerer",
+    wiz: "Wizard"
+  }
+
   RACES = %w(Human Dwarf Elf Gnome Half-Elf Half-Orc Halfling Drow)
 
   # === Users & Admin ===
+  print "Users"
   admin = User.new do |u|
     u.name = "tough griff"
     u.email = "gryphon92@gmail.com"
@@ -29,14 +43,24 @@ if Rails.env.development? || Rails.env.staging?
     user.save!
     print "."
   end
+  puts
 
-  # === Characters ===
+  # === Classes ===
+  print "Classes"
+  CLASSES.each do |k, v|
+    CharacterClass.create(name: v, abbreviation: k)
+    print "."
+  end
+  puts
+
+  # === Characters and Items ===
+  print "Characters"
   users = User.limit(5)
   users.each do |user|
     3.times do
       character = user.characters.build do |c|
         c.name = FFaker::Name.first_name
-        c.class_levels = { CLASSES.sample => rand(1..20) }
+        c.class_levels = { CLASSES.keys.sample => rand(1..20) }
         c.player_name = user.name
         c.race = RACES.sample
         c.alignment = Character::ALIGNMENTS.sample
@@ -46,7 +70,6 @@ if Rails.env.development? || Rails.env.staging?
     end
   end
 
-  # === Character Items ===
   character = Character.first
   weapon = character.weapons.build do |w|
     w.name = "Dagger"
@@ -71,7 +94,6 @@ if Rails.env.development? || Rails.env.staging?
   end
   armor.save!
   print "."
-
   puts
 else
   puts "Skipping seed data."

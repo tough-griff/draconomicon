@@ -3,7 +3,7 @@
   padding: $small-spacing;
 
   @include media($large-screen) {
-    margin-top: $small-spacing;
+    margin: $small-spacing auto;
     padding: 0;
   }
 }

@@ -23,7 +23,7 @@
 require "rails_helper"
 
 RSpec.describe Armor do
-  subject { create(:armor) }
+  subject { build(:armor) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:category) }

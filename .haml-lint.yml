@@ -1,4 +1,9 @@
 linters:
+  RuboCop:
+    ignored_cops:
+      - Style/NestedTernaryOperator
+      - Style/TrailingBlankLines
+
   LineLength:
     enabled: false
   RuboCop:

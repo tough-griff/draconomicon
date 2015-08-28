@@ -2,3 +2,6 @@
 .character-sheet
   %h3= @character.name
   = debug(@character)
+  .controls
+    = link_to t(".edit_link"), edit_user_character_path(@character.user, @character)
+    = link_to t(".delete.link"), [@character.user, @character], data: { confirm: t(".delete.confirmation") }, method: :delete

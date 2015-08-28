@@ -78,6 +78,7 @@
 
   .more {
     position: relative;
+    z-index: 5000;
 
     > a {
       @include media($medium-screen) {

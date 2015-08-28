@@ -44,7 +44,7 @@ group :development do
   gem "spring"
 
   # Code style and linting
-  gem "haml-lint", require: false
+  gem "haml_lint", require: false
   gem "rubocop", require: false
   gem "scss_lint", require: false
 end

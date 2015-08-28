@@ -18,7 +18,9 @@
 #
 
 class Item < ActiveRecord::Base
-  belongs_to :character
+  include Inventoriable
+
+  default_scope { order(created_at: :asc) }
 
   validates :name, presence: true
 end

@@ -1,0 +1,17 @@
+= simple_form_for @character, url: user_character_path(@user, @character), html: { class: "edit-character" } do |f|
+  %h2.form-heading= t(".heading")
+  = f.input :name, autofocus: true, required: true
+  = f.input :class_levels, disabled: true
+  = f.input :background
+  = f.input :player_name
+  = f.input :race
+  = f.input :alignment, collection: Character::ALIGNMENTS
+  = f.input :experience
+  = f.input :age
+  = f.input :height
+  = f.input :weight
+  = f.input :eyes
+  = f.input :skin
+  = f.input :hair
+  .form-actions
+    = f.submit t(".submit"), class: "submit"

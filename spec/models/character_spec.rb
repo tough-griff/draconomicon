@@ -23,13 +23,14 @@
 #
 # Indexes
 #
+#  index_characters_on_slug     (slug)
 #  index_characters_on_user_id  (user_id)
 #
 
 require "rails_helper"
 
 RSpec.describe Character do
-  subject { create(:character) }
+  subject { build(:character) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:slug) }

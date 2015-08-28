@@ -20,7 +20,7 @@
 require "rails_helper"
 
 RSpec.describe Item do
-  subject { create(:item) }
+  subject { build(:item) }
 
   it { is_expected.to respond_to(:name) }
   it { is_expected.to respond_to(:cost) }

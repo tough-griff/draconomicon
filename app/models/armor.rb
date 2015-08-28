@@ -21,9 +21,11 @@
 #
 
 class Armor < ActiveRecord::Base
-  CATEGORIES = ["Light Armor", "Medium Armor", "Heavy Armor", "Shield"]
+  include Inventoriable
 
-  belongs_to :character
+  default_scope { order(created_at: :asc) }
+
+  CATEGORIES = ["Light Armor", "Medium Armor", "Heavy Armor", "Shield"]
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: CATEGORIES

@@ -12,8 +12,10 @@
           %li.more
             = link_to current_user, "javascript:void(0)"
             %ul.submenu
-              = active_link_to t("paths.user"), current_user, wrap_tag: :li
+              = active_link_to t("paths.user"), current_user, wrap_tag: :li, active: :exact
               = active_link_to t("paths.edit_user_registration"), edit_user_registration_path, wrap_tag: :li
+              %li.separator
+              = active_link_to t("paths.new_user_character"), new_user_character_path(current_user), wrap_tag: :li
               - if current_user.admin?
                 %li.separator
                 %li= link_to t("paths.sidekiq_web"), sidekiq_web_path

@@ -43,6 +43,8 @@ FactoryGirl.define do
     password "foobarbaz"
     password_confirmation "foobarbaz"
 
+    after(:build) { |user| user.slug = user.name.parameterize }
+
     trait :invalid do
       name ""
     end

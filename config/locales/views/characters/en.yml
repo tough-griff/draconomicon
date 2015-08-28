@@ -1,0 +1,13 @@
+en:
+  characters:
+    new:
+      heading: "New character"
+      submit: "Save character"
+    edit:
+      heading: "Edit character"
+      submit: "Save character"
+    show:
+      edit_link: "Edit"
+      delete:
+        link: "Delete"
+        confirmation: "Are you sure?"

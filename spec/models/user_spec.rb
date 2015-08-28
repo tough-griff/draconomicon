@@ -39,7 +39,7 @@
 require "rails_helper"
 
 RSpec.describe User do
-  subject { create(:user) }
+  subject { build(:user) }
 
   it { is_expected.to respond_to(:email) }
   it { is_expected.to respond_to(:name) }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811210613) do
+ActiveRecord::Schema.define(version: 20150824154556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20150811210613) do
   end
 
   add_index "armors", ["character_id"], name: "index_armors_on_character_id", using: :btree
+
+  create_table "character_classes", force: :cascade do |t|
+    t.string   "name",                   default: "", null: false
+    t.string   "abbreviation", limit: 3, default: "", null: false
+    t.string   "slug",                                null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "character_classes", ["slug"], name: "index_character_classes_on_slug", unique: true, using: :btree
 
   create_table "characters", force: :cascade do |t|
     t.integer  "user_id",                               null: false
@@ -52,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150811210613) do
     t.datetime "updated_at",                            null: false
   end
 
+  add_index "characters", ["slug"], name: "index_characters_on_slug", using: :btree
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -130,8 +141,8 @@ ActiveRecord::Schema.define(version: 20150811210613) do
 
   add_index "weapons", ["character_id"], name: "index_weapons_on_character_id", using: :btree
 
-  add_foreign_key "armors", "characters", on_delete: :cascade
-  add_foreign_key "characters", "users", on_delete: :cascade
-  add_foreign_key "items", "characters", on_delete: :cascade
-  add_foreign_key "weapons", "characters", on_delete: :cascade
+  add_foreign_key "armors", "characters", name: "armors_character_id_fk", on_delete: :cascade
+  add_foreign_key "characters", "users", name: "characters_user_id_fk", on_delete: :cascade
+  add_foreign_key "items", "characters", name: "items_character_id_fk", on_delete: :cascade
+  add_foreign_key "weapons", "characters", name: "weapons_character_id_fk", on_delete: :cascade
 end
