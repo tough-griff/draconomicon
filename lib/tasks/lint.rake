@@ -1,4 +1,4 @@
-unless Rails.env.production?
+if Rails.env.development?
   require "haml_lint/rake_task"
   require "rubocop/rake_task"
   require "scss_lint/rake_task"
