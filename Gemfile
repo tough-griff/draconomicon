@@ -68,7 +68,7 @@ group :test do
   gem "shoulda-matchers", require: false
 end
 
-group :production do
+group :production, :staging do
   gem "rails_12factor"
   gem "newrelic_rpm"
 end
