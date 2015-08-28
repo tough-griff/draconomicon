@@ -141,8 +141,8 @@ ActiveRecord::Schema.define(version: 20150824154556) do
 
   add_index "weapons", ["character_id"], name: "index_weapons_on_character_id", using: :btree
 
-  add_foreign_key "armors", "characters", on_delete: :cascade
-  add_foreign_key "characters", "users", on_delete: :cascade
-  add_foreign_key "items", "characters", on_delete: :cascade
-  add_foreign_key "weapons", "characters", on_delete: :cascade
+  add_foreign_key "armors", "characters", name: "armors_character_id_fk", on_delete: :cascade
+  add_foreign_key "characters", "users", name: "characters_user_id_fk", on_delete: :cascade
+  add_foreign_key "items", "characters", name: "items_character_id_fk", on_delete: :cascade
+  add_foreign_key "weapons", "characters", name: "weapons_character_id_fk", on_delete: :cascade
 end
