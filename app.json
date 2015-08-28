@@ -1,10 +1,9 @@
 {
   "name": "draconomicon",
   "scripts": {
-    "postdeploy": "bundle exec rake db:seed"
+    "postdeploy": "bundle exec rake db:setup"
   },
   "env": {
-    "DEPLOY_TASKS": "db:schema:load",
     "DEVISE_SECRET_KEY": {
       "required": true
     },
