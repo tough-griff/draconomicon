@@ -36,7 +36,6 @@ group :development do
   gem "bitters", require: false
   gem "brakeman", require: false
   gem "bundler-audit", require: false
-  gem "ffaker", require: false
   gem "foreman", require: false
   gem "immigrant"
   gem "lol_dba"
@@ -48,6 +47,10 @@ group :development do
   gem "haml-lint", require: false
   gem "rubocop", require: false
   gem "scss_lint", require: false
+end
+
+group :development, :staging do
+  gem "ffaker", require: false
 end
 
 group :development, :test do
