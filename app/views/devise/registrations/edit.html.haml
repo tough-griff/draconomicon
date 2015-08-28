@@ -10,5 +10,5 @@
   .form-actions
     = f.submit class: "submit"
 .delete-user
-  %h3.form-heading= t(".delete.heading")
-  = link_to t(".delete.submit"), registration_path(resource_name), data: { confirm: t(".delete.confirmation") }, method: :delete
+  %h2= t(".delete.heading")
+  = link_to t(".delete.submit"), registration_path(resource_name), class: "button red", data: { confirm: t(".delete.confirmation") }, method: :delete

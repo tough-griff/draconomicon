@@ -6,3 +6,6 @@ linters:
 
   LineLength:
     enabled: false
+  RuboCop:
+    exclude:
+      - app/views/kaminari/_page.html.haml

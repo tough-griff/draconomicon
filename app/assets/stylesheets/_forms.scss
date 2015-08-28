@@ -1,18 +1,19 @@
-[disabled] {
-  background-color: lighten($light-gray, 10%);
-  cursor: not-allowed;
+@mixin attach-to-input($color) {
+  @include border-bottom-radius($base-border-radius);
+  @include font-smoothing;
+  background-color: $color;
+  color: $white;
+  display: block;
+  margin-bottom: $small-spacing;
+  padding: 0 ($base-spacing / 3);
 }
 
 .form-group {
-  $error-border-color: darken($error-color, 35%);
-  $error-text-color: #fff;
-  $form-error-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($error-border-color, $lightness: -5%, $alpha: -.3);
-  $hint-border-color: $action-color;
-  $hint-text-color: #fff;
+  $form-error-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($red, $lightness: -5%, $alpha: -.3);
 
   > input {
-    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s, z-index ease-in-out .15s);
     position: relative;
+    transition: all $base-duration $base-timing;
 
     &:focus {
       z-index: 2;
@@ -53,15 +54,13 @@
     }
 
     > .hint {
-      @include border-bottom-radius($base-border-radius);
-      background-color: $hint-border-color;
-      color: $hint-text-color;
-      display: block;
-      margin-bottom: $small-spacing;
-      padding: 0 ($base-spacing / 3);
+      @include attach-to-input($blue);
     }
 
-    &.input-error > .hint,
+    &.input-error > .hint {
+      display: none;
+    }
+
     &.connected > .hint {
       border-radius: 0;
       margin-bottom: -1px;
@@ -76,7 +75,7 @@
   &.input-error {
     > input {
       @include border-bottom-radius(0);
-      border-color: $error-border-color;
+      border-color: $red;
       margin-bottom: -1px;
 
       &:focus {
@@ -86,12 +85,7 @@
     }
 
     > .error {
-      @include border-bottom-radius($base-border-radius);
-      background-color: $error-border-color;
-      color: $error-text-color;
-      display: block;
-      margin-bottom: $small-spacing;
-      padding: 0 ($base-spacing / 3);
+      @include attach-to-input($red);
     }
 
     &.connected > .error {

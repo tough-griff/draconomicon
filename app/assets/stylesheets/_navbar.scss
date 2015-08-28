@@ -5,9 +5,10 @@
   $navbar-height: 3em;
   $navbar-submenu-width: 12em;
   $navbar-submenu-separator-color: lighten($navbar-background-color, 10%);
-  $navbar-text-color: #fff;
+  $navbar-text-color: $white;
 
   @include clearfix;
+  @include font-smoothing;
   background-color: $navbar-background-color;
   min-height: $navbar-height;
 

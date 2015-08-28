@@ -1,9 +1,10 @@
 // Stolen from GitHub's CSS
 .tooltipped {
   $tooltip-background-color: rgba(0, 0, 0, .8);
-  $tooltip-text-color: #fff;
+  $tooltip-text-color: $white;
   $tooltip-z-index: 99999;
 
+  display: inline-block;
   position: relative;
 
   &:before {
@@ -25,7 +26,6 @@
     content: attr(aria-label);
     display: none;
     font-size: 10px;
-    -webkit-font-smoothing: subpixel-antialiased;
     line-height: 1.5;
     padding: 5px 8px;
     pointer-events: none;

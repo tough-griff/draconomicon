@@ -4,16 +4,18 @@ RSpec.describe UsersHelper do
   let(:user) { build_stubbed(:user) }
 
   describe "#gravatar_for" do
+    subject { gravatar_for(user) }
+
     it "creates an image tag" do
-      expect(gravatar_for(user)).to match(%r{<img.*\/>})
+      is_expected.to match(%r{<img.*/>})
     end
 
     it "includes the correct alt text" do
-      expect(gravatar_for(user)).to match(user.name)
+      is_expected.to match(user.name)
     end
 
     it "defaults to size = 52" do
-      expect(gravatar_for(user)).to match(/\?s=52/)
+      is_expected.to match(/\?s=52/)
     end
 
     it "includes a custom size parameter" do

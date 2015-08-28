@@ -1,4 +1,4 @@
-if Rails.env.development?
+if Rails.env.development? || Rails.env.staging?
   require "ffaker"
 
   puts "Seeding database..."

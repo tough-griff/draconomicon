@@ -36,6 +36,7 @@
 #                     root GET    /                                             home#index
 #                     home GET    /home(.:format)                               home#index
 #                    about GET    /about(.:format)                              home#about
+#                    style GET    /style(.:format)                              home#style_test
 #                          GET    /*path(.:format)                              application#catchall
 #
 
@@ -54,5 +55,6 @@ Rails.application.routes.draw do
   root to: "home#index"
   get "home", to: "home#index"
   get "about", to: "home#about"
+  get "style", to: "home#style"
   get "*path", to: "application#catchall"
 end

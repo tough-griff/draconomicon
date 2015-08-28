@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.2.2"
 
-gem "rails", "~> 4.2.3"
+gem "rails", "~> 4.2.4"
 
 gem "active_link_to"
 gem "airbrake"
@@ -36,7 +36,6 @@ group :development do
   gem "bitters", require: false
   gem "brakeman", require: false
   gem "bundler-audit", require: false
-  gem "ffaker", require: false
   gem "foreman", require: false
   gem "immigrant"
   gem "lol_dba"
@@ -50,6 +49,10 @@ group :development do
   gem "scss_lint", require: false
 end
 
+group :development, :staging do
+  gem "ffaker", require: false
+end
+
 group :development, :test do
   gem "awesome_print"
   gem "bullet"
@@ -60,7 +63,7 @@ end
 
 group :test do
   gem "capybara"
-  gem "codeclimate-test-reporter", require: false
+  gem "coveralls", require: false
   gem "database_cleaner", require: false
   gem "factory_girl_rails"
   gem "formulaic"
@@ -68,7 +71,7 @@ group :test do
   gem "shoulda-matchers", require: false
 end
 
-group :production do
+group :production, :staging do
   gem "rails_12factor"
   gem "newrelic_rpm"
 end

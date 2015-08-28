@@ -1,9 +1,10 @@
-exclude: "app/assets/stylesheets/bitters/**"
-
 linters:
   NestingDepth:
     enabled: true
     max_depth: 5
+  QualifyingElement:
+    exclude:
+      - app/assets/stylesheets/bitters/_forms.scss
   SelectorDepth:
     enabled: true
     max_depth: 4
